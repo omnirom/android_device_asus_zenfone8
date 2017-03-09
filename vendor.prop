@@ -14,7 +14,6 @@ ro.com.android.dataroaming=false
 persist.backup.ntpServer=0.pool.ntp.org
 sys.vendor.shutdown.waittime=500
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
-wifi.aware.interface=wifi-aware0
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 vendor.audio_hal.period_size=192
 persist.vendor.audio.ambisonic.capture=false
@@ -213,3 +212,6 @@ persist.vendor.fingerprint.sensor_location=540|1761|110
 
 # Media
 debug.stagefright.c2inputsurface=-1
+
+# Wifi
+wifi.aware.interface=wifi-aware0
