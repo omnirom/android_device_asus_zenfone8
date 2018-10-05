@@ -130,7 +130,6 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.usbcontroller=a600000.dwc3 \
     cgroup.memory=nokmem,nosocket \
     console=ttyMSM0,115200n8 \
-    firmware_class.path=/vendor/firmware \
     ip6table_raw.raw_before_defrag=1 \
     iptable_raw.raw_before_defrag=1 \
     loop.max_part=7 \
