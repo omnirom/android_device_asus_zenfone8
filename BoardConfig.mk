@@ -99,13 +99,6 @@ BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
 # charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
-# Dex
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT ?= true
-  endif
-endif
-
 # Display
 TARGET_USES_HWC2 := true
 TARGET_SCREEN_DENSITY := 440
