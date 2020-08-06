@@ -27,19 +27,31 @@ namespace inscreen {
 namespace V1_0 {
 namespace implementation {
 
+FingerprintInscreen::FingerprintInscreen() {
+    this->mGoodixFingerprintDaemon = IGoodixFingerprintDaemon::getService();
+}
+
 Return<void> FingerprintInscreen::onStartEnroll() {
     return Void();
 }
 
 Return<void> FingerprintInscreen::onFinishEnroll() {
+    this->mGoodixFingerprintDaemon->sendCommand(200000, {},
+                                                [](int, const hidl_vec<signed char>&) {});
     return Void();
 }
 
 Return<void> FingerprintInscreen::onPress() {
+    this->mGoodixFingerprintDaemon->sendCommand(200001, {},
+                                                [](int, const hidl_vec<signed char>&) {});
+    this->mGoodixFingerprintDaemon->sendCommand(200002, {},
+                                                [](int, const hidl_vec<signed char>&) {});
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+    this->mGoodixFingerprintDaemon->sendCommand(200003, {},
+                                                [](int, const hidl_vec<signed char>&) {});
     return Void();
 }
 
@@ -48,6 +60,8 @@ Return<void> FingerprintInscreen::onShowFODView() {
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
+    this->mGoodixFingerprintDaemon->sendCommand(200000, {},
+                                                [](int, const hidl_vec<signed char>&) {});
     return Void();
 }
 
