@@ -1,2 +1,5 @@
 # Vendor overlay
 /(product|system/product)/vendor_overlay/[0-9]+/etc(/.*)?	u:object_r:vendor_configs_file:s0
+
+# HALs
+/product/bin/hw/omni\.biometrics\.fingerprint\.inscreen@1\.0-service\.asus_lahaina	u:object_r:hal_fod_asus_lahaina_exec:s0
