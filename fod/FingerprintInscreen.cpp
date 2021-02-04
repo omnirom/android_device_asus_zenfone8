@@ -18,6 +18,11 @@
 
 #include "FingerprintInscreen.h"
 #include <hidl/HidlTransportSupport.h>
+#include <fstream>
+
+#define FOD_ENABLE_PATH "/sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_mode"
+#define FOD_ENABLE_ON "1"
+#define FOD_ENABLE_OFF "0"
 
 namespace vendor {
 namespace omni {
@@ -26,6 +31,15 @@ namespace fingerprint {
 namespace inscreen {
 namespace V1_0 {
 namespace implementation {
+
+/*
+ * Write value to path and close file.
+ */
+template <typename T>
+static void set(const std::string& path, const T& value) {
+    std::ofstream file(path);
+    file << value;
+}
 
 FingerprintInscreen::FingerprintInscreen() {
     this->mGoodixFingerprintDaemon = IGoodixFingerprintDaemon::getService();
@@ -56,10 +70,12 @@ Return<void> FingerprintInscreen::onRelease() {
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
+    set(FOD_ENABLE_PATH, FOD_ENABLE_ON);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
+    set(FOD_ENABLE_PATH, FOD_ENABLE_OFF);
     this->mGoodixFingerprintDaemon->sendCommand(200000, {},
                                                 [](int, const hidl_vec<signed char>&) {});
     return Void();

@@ -12,3 +12,5 @@ binder_call(hal_fod_asus_lahaina, hal_fingerprint)
 
 # Allow hal_fod_asus_lahaina to hal_fingerprint_hwservice
 allow hal_fod_asus_lahaina hal_fingerprint_hwservice:hwservice_manager find;
+
+allow hal_fod_asus_lahaina sysfs_fod:file w_file_perms;
