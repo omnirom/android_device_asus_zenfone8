@@ -99,6 +99,9 @@ TARGET_ENABLE_MEDIADRM_64 := true
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# Fingerprint
+TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension.asus_lahaina
+
 # Global
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
 BOARD_USES_QCOM_HARDWARE := true
