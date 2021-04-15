@@ -224,6 +224,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service.sake
+
 # WiFi
 PRODUCT_PACKAGES += \
     TetheringOverlay \
