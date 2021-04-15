@@ -1,2 +1,6 @@
 # Vendor overlay
 /(product|system/product)/vendor_overlay/[0-9]+/etc(/.*)?	u:object_r:vendor_configs_file:s0
+
+# Vibrator
+/(product|system/product)/vendor_overlay/[0-9]+/bin/hw/vendor\.qti\.hardware\.vibrator\.service    u:object_r:hal_vibrator_default_exec:s0
+/(product|system/product)/vendor_overlay/[0-9]+/lib64/hw/vendor\.qti\.hardware\.vibrator\.impl\.so	u:object_r:vendor_file:s0
