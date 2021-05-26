@@ -19,7 +19,7 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-$(call inherit-product, vendor/asus/zenfone8/zenfone8-vendor.mk)
+#$(call inherit-product, vendor/asus/zenfone8/zenfone8-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
