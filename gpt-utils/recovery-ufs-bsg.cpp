@@ -32,17 +32,9 @@
 
 #include "recovery-ufs-bsg.h"
 
-#ifndef _BSG_FRAMEWORK_KERNEL_HEADERS
-#ifndef _GENERIC_KERNEL_HEADERS
-#include <scsi/ufs/ioctl.h>
-#include <scsi/ufs/ufs.h>
-#endif
-#endif
-
 //Size of the buffer that needs to be passed to the UFS ioctl
 #define UFS_ATTR_DATA_SIZE          32
 
-#ifdef _BSG_FRAMEWORK_KERNEL_HEADERS
 static int get_ufs_bsg_dev(void)
 {
     DIR *dir;
@@ -201,55 +193,3 @@ out:
     ufs_bsg_dev_close();
     return ret;
 }
-#endif
-
-#ifndef _BSG_FRAMEWORK_KERNEL_HEADERS
-int32_t set_boot_lun(char *sg_dev, uint8_t boot_lun_id)
-{
-#ifndef _GENERIC_KERNEL_HEADERS
-        int fd = -1;
-        int rc;
-        struct ufs_ioctl_query_data *data = NULL;
-        size_t ioctl_data_size = sizeof(struct ufs_ioctl_query_data) + UFS_ATTR_DATA_SIZE;
-
-        data = (struct ufs_ioctl_query_data*)malloc(ioctl_data_size);
-        if (!data) {
-                fprintf(stderr, "%s: Failed to alloc query data struct\n",
-                                __func__);
-                goto error;
-        }
-        memset(data, 0, ioctl_data_size);
-        data->opcode = UPIU_QUERY_OPCODE_WRITE_ATTR;
-        data->idn = QUERY_ATTR_IDN_BOOT_LU_EN;
-        data->buf_size = UFS_ATTR_DATA_SIZE;
-        data->buffer[0] = boot_lun_id;
-        fd = open(sg_dev, O_RDWR);
-        if (fd < 0) {
-                fprintf(stderr, "%s: Failed to open %s(%s)\n",
-                                __func__,
-                                sg_dev,
-                                strerror(errno));
-                goto error;
-        }
-        rc = ioctl(fd, UFS_IOCTL_QUERY, data);
-        if (rc) {
-                fprintf(stderr, "%s: UFS query ioctl failed(%s)\n",
-                                __func__,
-                                strerror(errno));
-                goto error;
-        }
-        close(fd);
-        free(data);
-        return 0;
-error:
-        if (fd >= 0)
-                close(fd);
-        if (data)
-                free(data);
-        return -1;
-#else
-        return 0;
-#endif
-}
-#endif
-

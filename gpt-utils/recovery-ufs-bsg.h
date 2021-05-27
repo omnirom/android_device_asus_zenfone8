@@ -76,7 +76,6 @@ int fd_ufs_bsg;
 
 int32_t set_ufs_lun(uint8_t lun_id);
 
-#ifdef _BSG_FRAMEWORK_KERNEL_HEADERS
 /* UPIU Transaction Codes */
 enum {
     UTP_UPIU_NOP_OUT    = 0x00,
@@ -126,6 +125,5 @@ enum query_attr_idn {
     QUERY_ATTR_IDN_POWER_MODE        = 0x02,
     QUERY_ATTR_IDN_ACTIVE_ICC_LVL    = 0x03,
 };
-#endif  /*  _BSG_FRAMEWORK_KERNEL_HEADERS */
 
 #endif /* __RECOVERY_UFS_BSG_H__ */
