@@ -31,6 +31,7 @@ AB_OTA_PARTITIONS += \
     product \
     system \
     system_ext \
+    vendor_boot  \
     vbmeta \
     vbmeta_system
 
@@ -97,6 +98,7 @@ TARGET_ENABLE_MEDIADRM_64 := true
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Global
+BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
@@ -127,6 +129,54 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
+
+# Kernel modules into vendor ramdisk
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := \
+                #rpmh-regulator.ko \
+                refgen.ko \
+                stub-regulator.ko \
+                #clk-dummy.ko \
+                clk-qcom.ko \
+                clk-rpmh.ko \
+                gcc-lahaina.ko \
+                gcc-shima.ko \
+                gcc-yupik.ko \
+                qnoc-qos.ko \
+                qnoc-lahaina.ko \
+                qnoc-shima.ko \
+                qnoc-yupik.ko \
+                cmd-db.ko \
+                qcom_rpmh.ko \
+                rpmhpd.ko \
+                icc-bcm-voter.ko \
+                icc-rpmh.ko \
+                pinctrl-msm.ko \
+                pinctrl-lahaina.ko \
+                pinctrl-shima.ko \
+                pinctrl-yupik.ko \
+                #_qcom_scm.ko \
+                secure_buffer.ko \
+                iommu-logger.ko \
+                qcom-arm-smmu-mod.ko \
+                phy-qcom-ufs.ko \
+                phy-qcom-ufs-qrbtc-sdm845.ko \
+                phy-qcom-ufs-qmp-v4-lahaina.ko\
+                phy-qcom-ufs-qmp-v4-yupik.ko\
+                ufshcd-crypto-qti.ko \
+                crypto-qti-common.ko \
+                crypto-qti-hwkm.ko \
+                hwkm.ko \
+                ufs-qcom.ko \
+                qbt_handler.ko \
+                qcom_watchdog.ko \
+                qcom-pdc.ko \
+                qpnp-power-on.ko \
+                msm-poweroff.ko \
+                sdhci-msm.ko \
+                cqhci.ko \
+                cqhci-crypto.ko \
+                cqhci-crypto-qti.ko \
+                memory_dump_v2.ko
 
 # NFC
 TARGET_USES_NQ_NFC := true
