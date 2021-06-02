@@ -28,5 +28,11 @@
     "repository": "android_vendor_qcom_opensource_bluetooth-commonsys-intf",
     "target_path": "vendor/qcom/opensource/commonsys-intf/bluetooth",
     "revision": "android-11"
+  },
+  {
+    "remote": "gitlab",
+    "repository": "android_vendor_images_asus",
+    "target_path": "vendor/images/asus",
+    "revision": "android-11"
   }
 ]
