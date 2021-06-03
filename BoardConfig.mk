@@ -35,7 +35,8 @@ AB_OTA_PARTITIONS += \
     system_ext \
     vbmeta \
     vbmeta_system \
-    vendor
+    vendor \
+    vendor_boot
 
 # Architecture
 TARGET_ARCH := arm64
@@ -130,6 +131,21 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
+
+# Kernel modules
+
+# ALL modules land in /vendor/lib/modules so they could be rmmod/insmod'd,
+# and modules.list actually limits us to the ones we intend to load.
+BOARD_VENDOR_KERNEL_MODULES := $(KERNEL_MODULES)
+KERNEL_MODULES := $(wildcard $(DEVICE_PATH)/modules/*.ko)
+KERNEL_MODULES_LOAD := $(strip $(shell cat $(firstword $(wildcard (DEVICE_PATH)/modules.load))))
+RECOVERY_KERNEL_MODULES_FILTER := \
+            $(foreach m,$(RECOVERY_KERNEL_MODULES),%/$(m))
+
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(KERNEL_MODULES)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(KERNEL_MODULES_LOAD)
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD += \
+            $(filter $(RECOVERY_KERNEL_MODULES_FILTER),$(KERNEL_MODULES_LOAD))
 
 # NFC
 TARGET_USES_NQ_NFC := true
