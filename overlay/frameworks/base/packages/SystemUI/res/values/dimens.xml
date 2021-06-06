@@ -23,5 +23,10 @@
 
     <!-- the padding on the end of the statusbar -->
     <dimen name="status_bar_padding_end">52.5px</dimen>
- 
+
+    <!-- Starting padding for a left-aligned status bar clock -->
+    <dimen name="status_bar_left_clock_starting_padding">115px</dimen>
+
+    <!-- Margin on the left side of the carrier text on Keyguard -->
+    <dimen name="keyguard_carrier_text_margin">150px</dimen>
 </resources>
