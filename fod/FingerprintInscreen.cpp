@@ -20,6 +20,10 @@
 #include "FingerprintInscreen.h"
 #include <hidl/HidlTransportSupport.h>
 
+#define FP_CTRL_PATH "/sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_ctrl_mode"
+#define FP_CTRL_SEC "2"
+#define FP_CTRL_OFF "0"
+
 #define GLOBAL_HBM_PATH "/proc/globalHbm"
 #define GLOBAL_HBM_ON "1"
 #define GLOBAL_HBM_OFF "0"
@@ -61,11 +65,13 @@ Return<void> FingerprintInscreen::onRelease() {
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
+    android::base::WriteStringToFile(FP_CTRL_SEC, FP_CTRL_PATH);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
     android::base::WriteStringToFile(GLOBAL_HBM_OFF, GLOBAL_HBM_PATH);
+    android::base::WriteStringToFile(FP_CTRL_OFF, FP_CTRL_PATH);
     return Void();
 }
 
