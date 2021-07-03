@@ -24,6 +24,9 @@
 #define GLOBAL_HBM_ON "1"
 #define GLOBAL_HBM_OFF "0"
 
+#define GLOBAL_HBM_MODE_PATH "/proc/hbm_mode"
+#define GLOBAL_HBM_MODE_ON "2"
+
 #define FOD_TOUCHED_PATH "/sys/class/drm/fod_touched"
 #define FOD_TOUCHED_ON "1"
 #define FOD_TOUCHED_OFF "0"
@@ -51,6 +54,7 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 Return<void> FingerprintInscreen::onPress() {
     this->mGoodixFingerprintDaemon->sendCommand(200001, {},
                                                 [](int, const hidl_vec<signed char>&) {});
+    android::base::WriteStringToFile(GLOBAL_HBM_MODE_ON, GLOBAL_HBM_MODE_PATH);
     android::base::WriteStringToFile(FOD_TOUCHED_ON, FOD_TOUCHED_PATH);
     android::base::WriteStringToFile(GLOBAL_HBM_ON, GLOBAL_HBM_PATH);
     this->mGoodixFingerprintDaemon->sendCommand(200002, {},
@@ -60,6 +64,7 @@ Return<void> FingerprintInscreen::onPress() {
 
 Return<void> FingerprintInscreen::onRelease() {
     android::base::WriteStringToFile(GLOBAL_HBM_OFF, GLOBAL_HBM_PATH);
+    android::base::WriteStringToFile(GLOBAL_HBM_OFF, GLOBAL_HBM_MODE_PATH);
     this->mGoodixFingerprintDaemon->sendCommand(200003, {},
                                                 [](int, const hidl_vec<signed char>&) {});
     return Void();
@@ -71,6 +76,7 @@ Return<void> FingerprintInscreen::onShowFODView() {
 
 Return<void> FingerprintInscreen::onHideFODView() {
     android::base::WriteStringToFile(GLOBAL_HBM_OFF, GLOBAL_HBM_PATH);
+    android::base::WriteStringToFile(GLOBAL_HBM_OFF, GLOBAL_HBM_MODE_PATH);
     android::base::WriteStringToFile(FOD_TOUCHED_OFF, FOD_TOUCHED_PATH);
     return Void();
 }
