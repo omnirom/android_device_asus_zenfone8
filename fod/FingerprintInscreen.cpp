@@ -28,6 +28,9 @@
 #define FOD_TOUCHED_ON "1"
 #define FOD_TOUCHED_OFF "0"
 
+#define FOD_EVENT_PATH "/proc/driver/fod_event"
+#define FOD_WAKEUP_EVENT "33"
+
 namespace vendor {
 namespace omni {
 namespace biometrics {
@@ -66,6 +69,7 @@ Return<void> FingerprintInscreen::onRelease() {
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
+    android::base::WriteStringToFile(FOD_WAKEUP_EVENT, FOD_EVENT_PATH);
     return Void();
 }
 
