@@ -1,0 +1,3 @@
+on boot
+    chown system /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_mode
+    chmod 0660 /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_mode

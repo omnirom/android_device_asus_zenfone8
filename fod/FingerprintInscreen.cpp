@@ -19,10 +19,15 @@
 #include <android-base/file.h>
 #include "FingerprintInscreen.h"
 #include <hidl/HidlTransportSupport.h>
+#include <fstream>
 
 #define GLOBAL_HBM_PATH "/proc/globalHbm"
 #define GLOBAL_HBM_ON "1"
 #define GLOBAL_HBM_OFF "0"
+
+#define FOD_ENABLE_PATH "/sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_mode"
+#define FOD_ENABLE_ON "1"
+#define FOD_ENABLE_OFF "0"
 
 #define FOD_TOUCHED_PATH "/sys/class/drm/fod_touched"
 #define FOD_TOUCHED_ON "1"
@@ -38,6 +43,15 @@ namespace fingerprint {
 namespace inscreen {
 namespace V1_0 {
 namespace implementation {
+
+/*
+ * Write value to path and close file.
+ */
+template <typename T>
+static void set(const std::string& path, const T& value) {
+    std::ofstream file(path);
+    file << value;
+}
 
 FingerprintInscreen::FingerprintInscreen() {
     this->mGoodixFingerprintDaemon = IGoodixFingerprintDaemon::getService();
@@ -69,6 +83,7 @@ Return<void> FingerprintInscreen::onRelease() {
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
+    set(FOD_ENABLE_PATH, FOD_ENABLE_ON);
     android::base::WriteStringToFile(FOD_WAKEUP_EVENT, FOD_EVENT_PATH);
     return Void();
 }
@@ -76,6 +91,7 @@ Return<void> FingerprintInscreen::onShowFODView() {
 Return<void> FingerprintInscreen::onHideFODView() {
     android::base::WriteStringToFile(GLOBAL_HBM_OFF, GLOBAL_HBM_PATH);
     android::base::WriteStringToFile(FOD_TOUCHED_OFF, FOD_TOUCHED_PATH);
+    set(FOD_ENABLE_PATH, FOD_ENABLE_OFF);
     return Void();
 }
 
