@@ -10,3 +10,6 @@
 /dsp                    u:object_r:rootfs:s0
 
 /dev/block/platform/soc/1d84000\.ufshc/by-name/super   u:object_r:super_block_device:s0
+
+# UDFPS
+/system_ext/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.asus_lahaina u:object_r:hal_fingerprint_default_exec:s0
