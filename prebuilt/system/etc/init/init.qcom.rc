@@ -1,0 +1,5 @@
+service vendor.fps_hal /system/bin/true
+    disabled
+
+service vendor.face-hal-1-0-default /system/bin/true
+    disabled
