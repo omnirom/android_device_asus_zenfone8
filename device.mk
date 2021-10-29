@@ -37,6 +37,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # A/B
 ENABLE_VIRTUAL_AB := true
@@ -77,14 +78,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes.xml
 
 # Bluetooth
-PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
-PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/conf
+#PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+#PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/conf
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
+#PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
 
-PRODUCT_PACKAGES += BluetoothExt
-PRODUCT_PACKAGES += libbluetooth_qti
-PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
+#PRODUCT_PACKAGES += BluetoothExt
+#PRODUCT_PACKAGES += libbluetooth_qti
+#PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -114,7 +115,7 @@ PRODUCT_PACKAGES += \
 
 # fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
 # Fingerprint
@@ -122,19 +123,19 @@ PRODUCT_PACKAGES += \
     omni.biometrics.fingerprint.inscreen@1.0-service.asus_lahaina
 
 # FM
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio
 
-PRODUCT_BOOT_JARS += qcom.fmradio
+#PRODUCT_BOOT_JARS += qcom.fmradio
 
 # Frameworks
 PRODUCT_PACKAGES += \
     FrameworksResOverlay
 
 # HIDL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
     libhidltransport \
@@ -194,6 +195,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := true
+
 # Systemhelper
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.systemhelper@1.0
@@ -234,7 +237,7 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libnl \
 
-PRODUCT_BOOT_JARS += \
+#PRODUCT_BOOT_JARS += \
     WfdCommon
 
-include vendor/qcom/opensource/display-commonsys-intf/config/display-product-system.mk
+include vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk

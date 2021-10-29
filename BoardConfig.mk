@@ -43,13 +43,15 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := kryo300
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := cortex-a76
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-2a
+TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a75
+TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a76
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -103,22 +105,26 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 # Global
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
 BOARD_USES_QCOM_HARDWARE := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 TARGET_USES_QCOM_BSP := false
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_rog2
+
 #HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vendor_framework_compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
 
 # Kernel
-KERNEL_LD := LD=ld.lld
+#KERNEL_LD := LD=ld.lld
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=0 firmware_class.path=/vendor/firmware loop.max_part=7 cgroup.memory=nokmem,nosocket pcie_ports=compat loop.max_part=7 iptable_raw.raw_before_defrag=1 ip6table_raw.raw_before_defrag=1
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x00000000
 TARGET_KERNEL_ARCH := arm64
@@ -134,17 +140,17 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/
 TARGET_KERNEL_ADDITIONAL_FLAGS += LLVM=1
 
 # Use Gnu AS until we can switch to LLVM_IAS=1
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gas/$(HOST_PREBUILT_TAG)
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gas/$(HOST_PREBUILT_TAG)
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 
 # NFC
 TARGET_USES_NQ_NFC := true
 
 # Partitions
-ifneq ($(ROM_BUILDTYPE),$(filter $(ROM_BUILDTYPE),GAPPS MICROG))
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 1258291200
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1258291200
-BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 629145600
+ifneq ($(ROM_BUILDTYPE),$(filter $(ROM_BUILDTYPE),GAPPS))
+BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 2000000000
+BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1000000000
+BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 1000000000
 endif
 
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -204,10 +210,12 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 include vendor/omni/sepolicy/sepolicy.mk
-include $(DEVICE_PATH)/sepolicy/SEPolicy.mk
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private \
-                                   $(DEVICE_PATH)/sepolicy/qva/private
+include device/qcom/sepolicy/SEPolicy.mk
+#include $(DEVICE_PATH)/sepolicy/SEPolicy.mk
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private \
+                                   #$(DEVICE_PATH)/sepolicy/qva/private
 
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/product/private
 
