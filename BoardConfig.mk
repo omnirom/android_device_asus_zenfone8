@@ -140,6 +140,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 TARGET_KERNEL_ADDITIONAL_FLAGS += LLVM=1
+TARGET_KERNEL_CLANG_VERSION := r383902
 
 # Use Gnu AS until we can switch to LLVM_IAS=1
 KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gas/$(HOST_PREBUILT_TAG)
