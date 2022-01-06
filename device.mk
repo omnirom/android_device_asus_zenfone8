@@ -212,6 +212,10 @@ PRODUCT_PACKAGES += \
 
 # Update engine
 PRODUCT_PACKAGES += \
+    extphonelib \
+    extphonelib-product \
+    extphonelib.xml \
+    extphonelib_product.xml \
     otapreopt_script \
     update_engine \
     update_engine_sideload \
