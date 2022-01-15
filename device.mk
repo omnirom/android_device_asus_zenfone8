@@ -79,7 +79,8 @@ PRODUCT_COPY_FILES += \
 
 # Biometrics
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina
+    android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina \
+    vendor.goodix.hardware.biometrics.fingerprint@2.1
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vintf/manifest_lahaina.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/vintf/manifest_lahaina.xml
