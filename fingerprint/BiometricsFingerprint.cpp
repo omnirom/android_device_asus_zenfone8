@@ -16,6 +16,7 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 
+#include <android-base/file.h>
 #include <hardware/hw_auth_token.h>
 
 #include <hardware/hardware.h>
@@ -30,6 +31,9 @@
 #define CMD_LIGHT_AREA_CLOSE 200000
 #define CMD_LIGHT_AREA_STABLE 200002
 #define CMD_PARTIAL_FINGER_DETECTED 200004
+
+#define UDFPS_EVENT_PATH "/proc/driver/udfps_event"
+#define UDFPS_WAKEUP_EVENT "33"
 
 namespace android {
 namespace hardware {
@@ -77,6 +81,7 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
     mGoodixFingerprintDaemon->sendCommand(CMD_LIGHT_AREA_STABLE, {},
                                                 [](int, const hidl_vec<signed char>&) {});
+    android::base::WriteStringToFile(UDFPS_WAKEUP_EVENT, UDFPS_EVENT_PATH);
     mGoodixFingerprintDaemon->sendCommand(CMD_FINGER_DOWN, {},
                                                 [](int, const hidl_vec<signed char>&) {});
     return Void();
