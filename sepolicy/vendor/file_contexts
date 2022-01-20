@@ -1,0 +1,36 @@
+# ASUS partitions.
+/dev/block/platform/soc/1d84000\.ufshc/by-name/asusfw_[ab]                                         u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/asuskey                                             u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/xrom_[ab]                                           u:object_r:vendor_custom_ab_block_device:s0
+
+# Display
+/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.display\.iris-service                 u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.feature\.irisfeature-service          u:object_r:hal_graphics_composer_default_exec:s0
+
+# Files in rootfs
+/batinfo(/.*)?                                                                                     u:object_r:bat_file:s0
+
+# Fingerprint goodix
+/dev/goodix_fp                                                                                     u:object_r:fingerprintd_device:s0
+/data/vendor/goodix/gf_data(/.*)?                                                                  u:object_r:vendor_goodix_gf_data_file:s0
+/(vendor|system/vendor)/bin/cali_check                                                             u:object_r:asus_fingerprint_exec:s0
+/(vendor|system/vendor)/bin/cali_shipping_check	                                                   u:object_r:asus_fingerprint_exec:s0
+/(vendor|system/vendor)/bin/fp_cali_mv                                                             u:object_r:asus_fingerprint_exec:s0
+/(vendor|system/vendor)/bin/gf_ver.sh                                                              u:object_r:asus_fingerprint_exec:s0
+
+# Sensor
+/dev/asusLightSensor                                                                               u:object_r:sensor_device:s0
+/dev/asusProxSensor                                                                                u:object_r:sensor_device:s0
+
+# Sp
+/(vendor|system/vendor)/bin/sp                                                                     u:object_r:asus_sp_exec:s0
+
+# Storage
+/(vendor|system/vendor)/bin/ufs_info.sh                                                            u:object_r:asus_storage_exec:s0
+/(vendor|system/vendor)/bin/ddr_info.sh                                                            u:object_r:asus_storage_exec:s0
+
+# Touch
+/(vendor|system/vendor)/bin/touch_ver.sh                                                           u:object_r:asus_touch_exec:s0
+
+# Wifi
+/(vendor|system/vendor)/bin/hw/vendor\.asus\.wifi\.netutil@1\.0-service                            u:object_r:hal_netutil_default_exec:s0

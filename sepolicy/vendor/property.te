@@ -1,0 +1,6 @@
+type vendor_asus_prop, property_type;
+type vendor_asus_sensors_prop, property_type;
+type vendor_asus_sp_system_prop, property_type;
+type vendor_fp_prop, property_type;
+type vendor_thermal_prop, property_type;
+type vendor_set_camera_prop, property_type;
