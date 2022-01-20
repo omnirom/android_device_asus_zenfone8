@@ -35,8 +35,15 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     vendor/omni/overlay/CarrierConfig
 
+PRODUCT_PACKAGES += \
+    aptxalsOverlay \
+    FrameworksResOverlay \
+    FrameworksResVendor \
+    TeleServiceOverlay \
+    TetheringOverlay \
+    WifiOverlay
+
 # VNDK
-PRODUCT_TARGET_VNDK_VERSION := 30
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # A/B
@@ -45,7 +52,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/omnipreopt_script \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
@@ -56,12 +63,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_vendor=true
 
 PRODUCT_PACKAGES += \
-    omnipreopt_script
-
-# tell update_engine to not change dynamic partition table during updates
-# needed since our qti_dynamic_partitions does not include
-# vendor and odm and we also dont want to AB update them
-TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
+    checkpoint_gc \
+    otapreopt_script
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -70,12 +73,16 @@ PRODUCT_PACKAGES += \
 # Api
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Atrace
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service
+
 # audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/ZS590KS/audio_policy_configuration_ZS590KS.xml \
-    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/ZS590KS/audio_policy_volumes_ZS590KS.xml \
-    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes.xml
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/ZS590KS/audio_policy_configuration_ZS590KS.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/ZS590KS/audio_policy_volumes_ZS590KS.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
 
 # Bluetooth
 #PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
@@ -87,10 +94,15 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += libbluetooth_qti
 #PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
 
+# Biometric
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
+
 # Boot control
 PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl-qti \
     android.hardware.boot@1.1-impl-qti.recovery \
-    bootctrl.lahaina.recovery
+    android.hardware.boot@1.1-service
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
@@ -100,6 +112,9 @@ PRODUCT_PACKAGES += \
     omni_charger_res_images \
     animation.txt \
     font_charger.png
+
+# Dalvik
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # DeviceParts
 PRODUCT_PACKAGES += \
@@ -115,12 +130,8 @@ PRODUCT_PACKAGES += \
 
 # fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.1-impl-mock \
     fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    omni.biometrics.fingerprint.inscreen@1.0-service.asus_lahaina
 
 # FM
 PRODUCT_PACKAGES += \
@@ -129,10 +140,6 @@ PRODUCT_PACKAGES += \
     qcom.fmradio
 
 PRODUCT_BOOT_JARS += qcom.fmradio
-
-# Frameworks
-PRODUCT_PACKAGES += \
-    FrameworksResOverlay
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -165,7 +172,8 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/product,product) \
     $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/root,recovery/root) \
     $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/system_ext,system_ext)
+    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/system_ext,system_ext) \
+    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/vendor,vendor)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -184,11 +192,15 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
-    $(LOCAL_PATH)/ramdisk/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
+    $(LOCAL_PATH)/ramdisk/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.default
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
+
+# Security
+BOOT_SECURITY_PATCH := 2021-11-05
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -221,13 +233,12 @@ PRODUCT_HOST_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
-PRODUCT_BUILD_SUPER_PARTITION := false
+#PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # WiFi
 PRODUCT_PACKAGES += \
-    TetheringOverlay \
-    WifiOverlay
+    android.hardware.wifi@1.0-service
 
 # Wifi Display
 PRODUCT_PACKAGES += \

@@ -1,0 +1,6 @@
+# ASUS partitions.
+/dev/block/platform/soc/1d84000\.ufshc/by-name/asusfw_[ab]                                         u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/batinfo                                             u:object_r:battery_block_device:s0
+
+# Files in rootfs
+/batinfo(/.*)?                                                                                     u:object_r:battery_file:s0

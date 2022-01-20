@@ -1,0 +1,4 @@
+# Battery
+type battery_file, file_type;
+type battery_block_device, file_type;
+

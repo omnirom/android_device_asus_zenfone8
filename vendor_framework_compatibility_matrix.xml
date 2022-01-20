@@ -1036,16 +1036,64 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-    <sepolicy>
-        <kernel-sepolicy-version>30</kernel-sepolicy-version>
-        <sepolicy-version>26.0</sepolicy-version>
-        <sepolicy-version>27.0</sepolicy-version>
-        <sepolicy-version>28.0</sepolicy-version>
-        <sepolicy-version>29.0</sepolicy-version>
-        <sepolicy-version>30.0</sepolicy-version>
-        <sepolicy-version>31.0</sepolicy-version>
-    </sepolicy>
-    <avb>
-        <vbmeta-version>1.0</vbmeta-version>
-    </avb>
+    <hal format="hidl" optional="true">
+        <name>vendor.asus.wifi.hostapd</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAsusHostapd</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IAsusHostapd/default</fqname>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.asus.wifi.netutil</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IWifiNetUtil</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IWifiNetUtil/default</fqname>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.ims.glovemode</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGloveMode</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IGloveMode/default</fqname>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.ims.zenmotion</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IZenMotion</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IZenMotion/default</fqname>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.nxp.nxpnfc</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>INxpNfc</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.0::INxpNfc/default</fqname>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.nxp.nxpnfclegacy</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>INxpNfcLegacy</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::INxpNfcLegacy/default</fqname>
+    </hal>
 </compatibility-matrix>
