@@ -35,8 +35,15 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     vendor/omni/overlay/CarrierConfig
 
+PRODUCT_PACKAGES += \
+    aptxalsOverlay \
+    FrameworksResOverlay \
+    FrameworksResVendor \
+    TeleServiceOverlay \
+    TetheringOverlay \
+    WifiOverlay
+
 # VNDK
-PRODUCT_TARGET_VNDK_VERSION := 30
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # A/B
@@ -45,7 +52,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/omnipreopt_script \
+    POSTINSTALL_PATH_system=system/bin/omnipreopt_script  \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
@@ -58,11 +65,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     omnipreopt_script
 
-# tell update_engine to not change dynamic partition table during updates
-# needed since our qti_dynamic_partitions does not include
-# vendor and odm and we also dont want to AB update them
-TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService
@@ -70,12 +72,20 @@ PRODUCT_PACKAGES += \
 # Api
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Atrace
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service
+
 # audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/ZS590KS/audio_policy_configuration_ZS590KS.xml \
-    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/ZS590KS/audio_policy_volumes_ZS590KS.xml \
-    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes.xml
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/ZS590KS/audio_policy_configuration_ZS590KS.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/ZS590KS/audio_policy_volumes_ZS590KS.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
+
+# Authsecret
+PRODUCT_PACKAGES += \
+    android.hardware.authsecret@1.0.vendor
 
 # Bluetooth
 #PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
@@ -86,6 +96,10 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += BluetoothExt
 #PRODUCT_PACKAGES += libbluetooth_qti
 #PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
+
+# Biometric
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -101,6 +115,9 @@ PRODUCT_PACKAGES += \
     animation.txt \
     font_charger.png
 
+# Dalvik
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # DeviceParts
 PRODUCT_PACKAGES += \
     DeviceParts
@@ -108,19 +125,24 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     libion \
-    libtinyxml2
+    libtinyxml2 \
+    vendor.qti.hardware.display.config-V1-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V2-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V3-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V4-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V5-ndk_platform.vendor
 
 PRODUCT_PACKAGES += \
     libtinyalsa
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4-service.clearkey
 
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    omni.biometrics.fingerprint.inscreen@1.0-service.asus_lahaina
 
 # FM
 PRODUCT_PACKAGES += \
@@ -130,9 +152,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += qcom.fmradio
 
-# Frameworks
+# Gatekeeper
 PRODUCT_PACKAGES += \
-    FrameworksResOverlay
+    android.hardware.gatekeeper@1.0.vendor
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -145,6 +167,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.kcm:system/usr/keychars/fts_ts.kcm \
     $(LOCAL_PATH)/keylayout/fts_ts.kl:system/usr/keylayout/fts_ts.kl \
     $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1.vendor
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -165,7 +191,8 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/product,product) \
     $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/root,recovery/root) \
     $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/system_ext,system_ext)
+    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/system_ext,system_ext) \
+    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/vendor,vendor)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -184,11 +211,15 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
-    $(LOCAL_PATH)/ramdisk/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
+    $(LOCAL_PATH)/ramdisk/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.default
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
+
+# Security
+BOOT_SECURITY_PATCH := 2021-11-05
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -208,6 +239,10 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     tcmiface
 
+# TrustedUI
+PRODUCT_PACKAGES += \
+    android.hidl.memory.block@1.0.vendor
+
 # Update engine
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -226,8 +261,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # WiFi
 PRODUCT_PACKAGES += \
-    TetheringOverlay \
-    WifiOverlay
+    android.hardware.wifi@1.0-service
 
 # Wifi Display
 PRODUCT_PACKAGES += \
@@ -237,5 +271,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_BOOT_JARS += \
     WfdCommon
 
-include vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk
-include vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk
+$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
+$(call inherit-product, vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk)
+
