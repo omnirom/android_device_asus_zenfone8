@@ -1,0 +1,25 @@
+# Fingerprint
+type asus_fingerprint_exec, exec_type, vendor_file_type, file_type;
+type fingerprintd_device, dev_type;
+type goodix_fingerprint_vndservice, vndservice_manager_type;
+type vendor_goodix_gf_data_file, file_type, data_file_type;
+
+# Offscreen Gestures
+type sysfs_gesture, sysfs_type, fs_type;
+type proc_touchscreen, proc_type, sysfs_type, fs_type;
+type sysfs_touchscreen, sysfs_type, fs_type;
+
+# rootfs
+type battery_block_device, file_type;
+
+# Sensor
+type sensor_device, dev_type;
+
+# Sp
+type asus_sp_exec, exec_type, vendor_file_type, file_type;
+
+# Storage
+type asus_storage_exec, exec_type, vendor_file_type, file_type;
+
+# Touch
+type asus_touch_exec, exec_type, vendor_file_type, file_type;

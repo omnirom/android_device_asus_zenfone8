@@ -19,7 +19,6 @@
 # product configuration (apps).
 #
 DEVICE_PATH := device/asus/zenfone8
-IMAGES_PATH := vendor/images/asus/zenfone8
 
 BOARD_VENDOR := asus
 
@@ -118,6 +117,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 #HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vendor_framework_compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest_lahaina.xml
 
 # Kernel
 KERNEL_LD := LD=ld.lld
@@ -173,8 +173,6 @@ TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
-BOARD_PREBUILT_ODMIMAGE := $(IMAGES_PATH)/odm.img
-BOARD_PREBUILT_VENDORIMAGE := $(IMAGES_PATH)/vendor.img
 
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system \
@@ -187,7 +185,7 @@ BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_SUPER_PARTITION_SIZE := 7516192768
 
 
-BOARD_ROOT_EXTRA_FOLDERS += ADF APD asdf batinfo
+BOARD_ROOT_EXTRA_FOLDERS += batinfo
 
 # Platform
 TARGET_BOARD_PLATFORM := lahaina
@@ -206,18 +204,11 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 150
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Sepolicy
 include vendor/omni/sepolicy/sepolicy.mk
-include $(DEVICE_PATH)/sepolicy/SEPolicy.mk
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private \
-                                   $(DEVICE_PATH)/sepolicy/generic/private
-
-PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/product/private
+include device/qcom/sepolicy_vndr/SEPolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Treble
 BOARD_VNDK_VERSION := current

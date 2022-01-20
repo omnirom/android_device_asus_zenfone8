@@ -1,0 +1,143 @@
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#ASUS_BSP +++ BT WIFI MAC, BT WIFI firmware version
+ro.vendor.btmac                                 u:object_r:vendor_asus_prop:s0
+vendor.bt.version.driver                        u:object_r:vendor_asus_prop:s0
+#ASUS_BSP --- BT WIFI MAC, BT WIFI firmware version
+
+#ASUS_BSP Fix GPS version incorrect on user build due to SELinux denied +++
+vendor.gps.                        u:object_r:vendor_asus_prop:s0
+persist.vendor.asus.agps.ntpinjecttime  u:object_r:vendor_asus_prop:s0
+persist.vendor.asus.agps.injecttime     u:object_r:vendor_asus_prop:s0
+persist.vendor.asus.gps.engstate        u:object_r:vendor_asus_prop:s0
+#ASUS_BSP Fix GPS version incorrect on user build due to SELinux denied ---
+
+#ASUS_BSP 2nd G+G +++
+vendor.asus.rstg2k.result			u:object_r:vendor_asus_sensors_prop:s0
+vendor.asus.rstgy2k.result			u:object_r:vendor_asus_sensors_prop:s0
+persist.vendor.asus.gyrosensor2calibx		u:object_r:vendor_asus_sensors_prop:s0
+persist.vendor.asus.gyrosensor2caliby		u:object_r:vendor_asus_sensors_prop:s0
+persist.vendor.asus.gyrosensor2calibz		u:object_r:vendor_asus_sensors_prop:s0
+persist.vendor.asus.gyrosensor2calibtime	u:object_r:vendor_asus_sensors_prop:s0
+#ASUS_BSP 2nd G+G ---
+
+# ASUS add therm property +++ 
+vendor.thermal.    u:object_r:vendor_thermal_prop:s0
+vendor.thermal_    u:object_r:vendor_thermal_prop:s0
+vendor.thermal.dumpsys  u:object_r:vendor_thermal_prop:s0
+vendor.asus.thermal_config_id		u:object_r:vendor_thermal_prop:s0
+vendor.asus.thermalfan	u:object_r:vendor_thermal_prop:s0
+persist.vendor.asus.thermal.config  u:object_r:vendor_thermal_prop:s0
+persist.vendor.asus.thermal.debug	u:object_r:vendor_thermal_prop:s0
+vendor.asus.virtualtherm u:object_r:vendor_thermal_prop:s0
+vendor.thermal.current.perf.conf u:object_r:vendor_thermal_prop:s0
+# ASUS add therm property ---
+
+#ASUS Camera +++
+vendor.camera.set.apk.usingname                u:object_r:vendor_set_camera_prop:s0
+vendor.camera.set.apk.activity                u:object_r:vendor_set_camera_prop:s0
+vendor.asus.dis_flash_light               u:object_r:vendor_set_camera_prop:s0
+#ASUS Camera ---
+
+#NFC
+vendor.asus.nfc.                    u:object_r:vendor_nfc_asus_prop:s0
+persist.vendor.nfc.                 u:object_r:vendor_asus_prop:s0
+
+#WIFI
+ro.vendor.wifimac                              u:object_r:vendor_asus_prop:s0
+ro.vendor.wifimac_2                            u:object_r:vendor_asus_prop:s0
+vendor.wifi.version.driver                     u:object_r:vendor_asus_prop:s0
+persist.vendor.asus.wlandriver.ver	u:object_r:vendor_asus_prop:s0
+
+# ASUS_BSP +++ Touch
+vendor.touch.version.driver     u:object_r:vendor_asus_prop:s0
+vendor.goodix.sensor.status     u:object_r:vendor_asus_prop:s0
+
+vendor.battery.version.driver     u:object_r:vendor_asus_prop:s0
+
+#ASUS_BSP ++ perfd log level
+persist.vendor.tcsystem.loglevel     u:object_r:vendor_asus_prop:s0
+#ASUS_BSP ++ perfd log level
+
+vendor.asus.mediaflag                  u:object_r:vendor_asus_prop:s0
+
+vendor.asus.rfps   u:object_r:vendor_asus_prop:s0
+vendor.asus.dfps   u:object_r:vendor_asus_prop:s0
+persist.vendor.tgpadriver.loglevel  u:object_r:vendor_asus_prop:s0
+persist.vendor.tgpadriver.disablehintTimeout u:object_r:vendor_asus_prop:s0
+vendor.thermal.current.perf.temp u:object_r:vendor_asus_prop:s0
+persist.vendor.tgpadriver.useCpuAffn u:object_r:vendor_asus_prop:s0
+vendor.asus.surfaceflingercall           u:object_r:vendor_asus_prop:s0
+vendor.foreground.app u:object_r:vendor_asus_prop:s0
+
+vendor.camera.preview u:object_r:vendor_asus_prop:s0
+
+#add for zram set
+persist.vendor.zram.disksize                           u:object_r:vendor_asus_sp_system_prop:s0
+persist.vendor.zram.enable				u:object_r:vendor_asus_sp_system_prop:s0
+vendor.asus.zram_setting			u:object_r:vendor_asus_prop:s0
+vendor.zram.disksize                           u:object_r:vendor_asus_prop:s0
+vendor.zram.enable				u:object_r:vendor_asus_prop:s0
+
+
+# ASUS for check keystatus
+vendor.drm.keystatus          u:object_r:vendor_display_prop:s0
+vendor.debug.drm.keystatus    u:object_r:vendor_asus_prop:s0
+
+# XROM & ASUSFW
+vendor.asus.build.ext.version				u:object_r:vendor_asus_prop:s0
+vendor.asus.build.sub.version				u:object_r:vendor_asus_prop:s0
+
+# SYSTEM
+ro.vendor.cpufreq					u:object_r:vendor_asus_prop:s0
+ro.vendor.memsize					u:object_r:vendor_asus_prop:s0
+ro.vendor.atd.platform					u:object_r:vendor_asus_prop:s0
+persist.vendor.setupwizard.active   u:object_r:vendor_asus_prop:s0
+
+# OTHERS
+vendor.asus.country.fp					u:object_r:vendor_asus_prop:s0
+vendor.debug.update.deviceinfo.result  			u:object_r:vendor_asus_prop:s0
+
+#Camera
+vendor.camera.sound.forced				u:object_r:vendor_asus_prop:s0
+
+# PowerOffAlarm
+ro.vendor.asus.poweroffalarm_support			u:object_r:vendor_asus_sp_system_prop:s0
+
+# Fingerprint
+vendor.goodix.service.ready		u:object_r:vendor_fp_prop:s0
+vendor.goodix.version.pack		u:object_r:vendor_fp_prop:s0
+vendor.fp.version.driver		u:object_r:vendor_fp_prop:s0
+vendor.gf.debug.dump_data		u:object_r:vendor_fp_prop:s0
+vendor.gf.debug.whitebox.enabled	u:object_r:vendor_fp_prop:s0
+vendor.goodix.sensor.id         	u:object_r:vendor_fp_prop:s0
+vendor.fp.cali.factory.check    	u:object_r:vendor_fp_prop:s0
+vendor.fp.cali.ready            	u:object_r:vendor_fp_prop:s0
+ro.hardware.fp_position         	u:object_r:vendor_fp_prop:s0
+ro.hardware.fp_shape            	u:object_r:vendor_fp_prop:s0
+vendor.goodix.sensor.vid       u:object_r:vendor_fp_prop:s0
