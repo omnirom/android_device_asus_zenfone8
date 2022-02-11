@@ -137,10 +137,13 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    vendor.qti.hardware.display.composer@3.0.vendor \
+    vendor.qti.hardware.display.allocator@4.0.vendor \
     android.hardware.graphics.common-V1-ndk_platform.vendor \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     libion \
+    libqdMetaData.system.so \
     libtinyxml2
 
 PRODUCT_PACKAGES += \
@@ -341,5 +344,6 @@ PRODUCT_PACKAGES += \
     WfdCommon
 
 $(call inherit-product, hardware/qcom-caf/sm8350/media/product.mk)
-$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
+$(call inherit-product, vendor/qcom/opensource/display/config/display-product-vendor.mk)
 $(call inherit-product, vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk)
+$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk)
