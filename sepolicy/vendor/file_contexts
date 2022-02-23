@@ -30,5 +30,8 @@
 /dev/asus2ndAccelSensor                                                                            u:object_r:sensors_device:s0
 /dev/asus2ndGyroSensor                                                                             u:object_r:sensors_device:s0
 
+# Thermal
+/(vendor|system/vendor)/bin/init\.asus\.thermal_conf\.sh                                           u:object_r:vendor_qti_init_shell_exec:s0
+
 # Vibrator
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.sake                      u:object_r:hal_vibrator_default_exec:s0

@@ -5,3 +5,15 @@ get_prop(vendor_thermal-engine, vendor_asus_camera_prop)
 set_prop(vendor_thermal-engine, vendor_asus_camera_prop)
 
 allow vendor_thermal-engine self:capability { fowner fsetid kill };
+allow vendor_thermal-engine vendor_qti_init_shell_exec:file { entrypoint };
+allow vendor_thermal-engine vendor_toolbox_exec:file { execute_no_trans };
+r_dir_file(vendor_thermal-engine, vendor_sysfs_scsi_target)
+
+r_dir_file(vendor_thermal-engine, sysfs_rtc)
+r_dir_file(vendor_thermal-engine, sysfs_wakeup)
+r_dir_file(vendor_thermal-engine, vendor_sysfs_kgsl_gpuclk)
+r_dir_file(vendor_thermal-engine, vendor_sysfs_svm_neuron)
+r_dir_file(vendor_thermal-engine, vendor_sysfs_qdss_dev)
+r_dir_file(vendor_thermal-engine, vendor_sysfs_scsi_target)
+r_dir_file(vendor_thermal-engine, vendor_sysfs_scsi_host)
+r_dir_file(vendor_thermal-engine, vendor_sysfs_usb_device)
