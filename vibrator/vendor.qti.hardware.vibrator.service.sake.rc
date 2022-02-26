@@ -1,6 +1,7 @@
 on fs
     # Haptics
     chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/index
     chown system system /sys/class/leds/vibrator/vmax
     chown system system /sys/class/leds/vibrator/gain
     chown system system /sys/class/leds/vibrator/seq
@@ -11,3 +12,6 @@ service vendor.qti.vibrator /vendor/bin/hw/vendor.qti.hardware.vibrator.service.
     class hal
     user system
     group system input
+
+on boot
+    write /sys/class/leds/vibrator/index 3
