@@ -26,7 +26,7 @@ import androidx.preference.PreferenceManager;
 
 public class GloveModeSwitch implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/proc/driver/glove";
+    private static final String FILE = "/sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_glove_mode";
 
     public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_GLOVE_SWITCH;
 
