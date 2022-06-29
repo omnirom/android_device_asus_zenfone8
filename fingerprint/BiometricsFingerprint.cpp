@@ -16,6 +16,7 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 
+#include <android-base/file.h>
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 #include <hardware/hw_auth_token.h>
@@ -36,6 +37,10 @@
 #define CMD_PARTIAL_FINGER_DETECTED 200004
 
 #define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui"
+
+#define UDFPS_MODE_PATH "/sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fod_mode"
+#define UDFPS_MODE_ON "1"
+#define UDFPS_MODE_OFF "0"
 
 namespace android {
 namespace hardware {
@@ -135,11 +140,13 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
 }
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
+    android::base::WriteStringToFile(UDFPS_MODE_ON, UDFPS_MODE_PATH);
     mCmdQueue.push(CMD_FINGER_DOWN);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
+    android::base::WriteStringToFile(UDFPS_MODE_OFF, UDFPS_MODE_PATH);
     mCmdQueue.push(CMD_FINGER_UP);
     return Void();
 }
