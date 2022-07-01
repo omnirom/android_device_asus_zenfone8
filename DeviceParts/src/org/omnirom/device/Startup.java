@@ -154,7 +154,7 @@ public class Startup extends BroadcastReceiver {
         }
 
         boolean enabledGesture = Settings.System.getInt(context.getContentResolver(), GestureSettings.SETTINGS_GESTURE_KEY, 0) != 0;
-        if (enabledGlove) {
+        if (enabledGesture) {
             restore(GestureSettings.getFile(), enabledGesture);
         }
     }
