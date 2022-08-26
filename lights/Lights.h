@@ -19,7 +19,7 @@ class Lights : public BnLights {
     public:
       Lights();
       ndk::ScopedAStatus setLightState(int id, const HwLightState& state) override;
-      ndk::ScopedAStatus getLights(std::vector<HwLight>* types) override;
+      ndk::ScopedAStatus getLights(std::vector<HwLight>* lights) override;
 
     private:
       std::map<int, light_device_t*> mLights;
