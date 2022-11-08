@@ -11,20 +11,16 @@
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
-    <uses-sdk
-        android:minSdkVersion="26"
-        android:targetSdkVersion="26" />
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/advanced_settings"
-        android:theme="@style/Theme.AppTheme"
+        android:theme="@style/AppTheme"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         tools:replace="android:appComponentFactory"
         android:supportsRtl="true" >
         <activity
             android:name="org.omnirom.device.DeviceSettingsActivity"
             android:exported="false"
-            android:label="@string/advanced_settings"
             android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +30,6 @@
         <activity-alias
             android:name="org.omnirom.device.DeviceSettings"
             android:exported="true"
-            android:label="@string/advanced_settings"
             android:targetActivity="DeviceSettingsActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,13 +57,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <receiver android:name="org.omnirom.device.Startup" >
+        <receiver android:name="org.omnirom.device.Startup"
+                  android:exported="false" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
         <service
             android:name="org.omnirom.device.GloveModeTileService"
+            android:exported="true"
             android:icon="@drawable/ic_glove_tile"
             android:label="@string/glove_mode_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -79,6 +76,7 @@
         </service>
         <service
             android:name="org.omnirom.device.VolumeTile"
+            android:exported="true"
             android:icon="@drawable/ic_volume_ringer"
             android:label="@string/volume_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -88,6 +86,7 @@
         </service>
         <service
             android:name="org.omnirom.device.FrameRateTileService"
+            android:exported="true"
             android:icon="@drawable/ic_refresh_rate"
             android:label="@string/refresh_rate_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
