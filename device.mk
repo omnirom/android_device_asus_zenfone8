@@ -236,6 +236,10 @@ PRODUCT_COPY_FILES += \
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Ramdisk
+PRODUCT_PACKAGES += \
+    tune2fs.vendor_ramdisk \
+    resize2fs.vendor_ramdisk
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
     $(LOCAL_PATH)/ramdisk/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.default
