@@ -48,5 +48,8 @@ allow asus_camera_app vendor_camera_data_file:file create_file_perms;
 allow asus_camera_app build_bootimage_prop:file { getattr map open read };
 allow asus_camera_app rs_exec:file rx_file_perms;
 
+# for system/lib64/DataSet/ispDB/ParameterDB.db
+allow asus_camera_app system_lib_file:file lock;
+
 get_prop(asus_camera_app, vendor_asus_build_prop)
 get_prop(asus_camera_app, vendor_asus_camera_prop)
