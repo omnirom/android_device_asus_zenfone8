@@ -101,6 +101,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Display
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += ((1 << 21) | (1 << 27))
 TARGET_USES_HWC2 := true
 TARGET_SCREEN_DENSITY := 440
 SOONG_CONFIG_qtidisplay_udfps := true
