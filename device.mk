@@ -351,3 +351,6 @@ PRODUCT_PACKAGES += \
 # Wifi Display
 PRODUCT_PACKAGES += \
     libnl
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
