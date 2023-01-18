@@ -96,6 +96,7 @@ vendor/bin/dit_af_cali
 vendor/bin/dit_cali
 vendor/bin/dit_cali_golden
 vendor/bin/ditbsp
+vendor/bin/dongle
 vendor/bin/dpmQmiMgr
 vendor/bin/dspservice
 vendor/bin/dualcam_default_cali.bin
@@ -263,7 +264,6 @@ vendor/bin/sensors_factory_init.sh
 vendor/bin/sh
 vendor/bin/shsusrd
 vendor/bin/sigma_dut
-vendor/bin/slad
 vendor/bin/slim_daemon
 vendor/bin/sp
 vendor/bin/spectraltool
@@ -453,7 +453,6 @@ vendor/etc/init/qmipriod.rc
 vendor/etc/init/qseecomd.rc
 vendor/etc/init/qttestservice.rc
 vendor/etc/init/shsusrd.rc
-vendor/etc/init/slad.rc
 vendor/etc/init/ssgtzd.rc
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/etc/init/vendor.pixelworks.hardware.display.iris-service.rc
@@ -1103,10 +1102,6 @@ vendor/etc/sensors/sensors_settings
 vendor/etc/sensors/sns_reg_config
 vendor/etc/silence_5s.wav
 vendor/etc/sla/slad.conf
-vendor/etc/sla/slad_data_iface.conf
-vendor/etc/sla/slad_num_iface.conf
-vendor/etc/sla/slad_wlan0_iface.conf
-vendor/etc/sla/slad_wlan1_iface.conf
 vendor/etc/sla/slmAppUseCase.conf
 vendor/etc/sla/slm_supported_list.xml
 vendor/etc/snapdragon_color_libs_config.xml
@@ -2898,6 +2893,7 @@ vendor/lib64/libtinyxml.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libtrustedapploader.so
 vendor/lib64/libtzdrmgenprov.so
+vendor/lib64/libusb.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/libvideooptfeature.so
 vendor/lib64/libvidhance.so
