@@ -20,6 +20,7 @@
 # product configuration (apps).
 #
 $(call inherit-product, vendor/asus/zenfone8/zenfone8-vendor.mk)
+$(call inherit-product, vendor/images/asus/zf8/zf8-app.mk)
 
 # fusefs / disable sdcardfs usage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -99,15 +100,6 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor
-
-#PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
-#PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/conf
-
-#PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
-
-#PRODUCT_PACKAGES += BluetoothExt
-#PRODUCT_PACKAGES += libbluetooth_qti
-#PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
 
 # Biometric
 PRODUCT_PACKAGES += \

@@ -1316,6 +1316,15 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib/libxtwifi_server_protocol_uri_v3.so"
     "lib64/libxtwifi_server_protocol.so"
     "lib64/libxtwifi_server_protocol_uri_v3.so"
+    "bin/hw/vendor.asus.wifi.netutil@1.1-service"
+    "bin/hw/vendor.asus.wifi.rttutil@1.0-service"
+    "bin/netutild_V1.1"
+    "bin/rttutild"
+    "etc/init/rttutild.rc"
+    "etc/init/vendor.asus.wifi.netutil@1.1-service.rc"
+    "etc/init/vendor.asus.wifi.rttutil@1.0-service.rc"
+    "lib64/vendor.asus.wifi.netutil@1.1.so"
+    "lib64/vendor.asus.wifi.rttutil@1.0.so"
 
 )
 ALL_SKIP_FILES=("${VENDOR_SKIP_FILES_COMMON[@]}" "${VENDOR_SKIP_FILES_DEVICE[@]}")
