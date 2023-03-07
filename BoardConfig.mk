@@ -137,7 +137,8 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     pcie_ports=compat \
     service_locator.enable=1 \
-    swiotlb=0
+    swiotlb=0 \
+    kpti=off
 
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
