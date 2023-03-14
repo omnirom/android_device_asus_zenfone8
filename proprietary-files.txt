@@ -6,14 +6,8 @@ system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 system_ext/etc/cdma_call_conf.xml
 
 # Bluetooth
--system_ext/app/aptxacu/aptxacu.apk
--system_ext/app/aptxui/aptxui.apk
 system_ext/etc/permissions/audiosphere.xml
 -system_ext/framework/audiosphere.jar
-
-# Bluetooth (aptX) - from raven - TP1A.220624.021
-system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
-system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Camera
 lib64/DataSet/arch/DIT_List.cfg
