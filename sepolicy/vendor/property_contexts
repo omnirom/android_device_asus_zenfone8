@@ -1,6 +1,11 @@
 # Audio
 vendor.use.audio.eu.parameters    u:object_r:vendor_audio_prop:s0
 
+# Audio (Dirac)
+persist.vendor.dirac.    u:object_r:vendor_asus_prop:s0
+ro.vendor.dirac.         u:object_r:vendor_asus_prop:s0
+vendor.dirac.            u:object_r:vendor_asus_prop:s0
+
 # Camera
 ro.vendor.build.asus.           u:object_r:vendor_asus_build_prop:s0
 ro.vendor.camera.sound.forced   u:object_r:vendor_asus_camera_prop:s0
