@@ -3,3 +3,6 @@ allow platform_app vendor_asus_build_prop:file { getattr map open read };
 
 # for system/lib64/DataSet/ispDB/ParameterDB.db
 allow platform_app system_lib_file:file lock;
+
+# Asus Props
+get_prop(platform_app, vendor_asus_prop)
