@@ -18,4 +18,9 @@
     <privapp-permissions package="com.asus.motorservice">
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
+
+    <privapp-permissions package="se.dirac.acs">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
 </permissions>
