@@ -1588,7 +1588,6 @@ vendor/lib/ese_client.so
 vendor/lib/ese_spi_nxp.so
 vendor/lib/ftm_fm_lib.so
 vendor/lib/hal_libnfc.so
-vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
@@ -2436,7 +2435,6 @@ vendor/lib64/ese_client.so
 vendor/lib64/ese_spi_nxp.so
 vendor/lib64/ftm_fm_lib.so
 vendor/lib64/hal_libnfc.so
-vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
