@@ -1,0 +1,22 @@
+# Policy for Asus Audio Amp CAl HAL service
+type audio_amp_cal, domain;
+type audio_amp_cal_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(audio_amp_cal)
+
+allow audio_amp_cal property_socket:sock_file write;
+
+get_prop(audio_amp_cal, vendor_audio_prop)
+set_prop(audio_amp_cal, vendor_audio_prop)
+
+get_prop(audio_amp_cal, ctl_default_prop)
+set_prop(audio_amp_cal, ctl_default_prop)
+
+allow audio_amp_cal audio_device:dir r_dir_perms;
+allow audio_amp_cal audio_device:chr_file rw_file_perms;
+
+allow audio_amp_cal mnt_vendor_file:dir r_dir_perms;
+
+allow audio_amp_cal vendor_persist_audio_file:dir rw_dir_perms;
+allow audio_amp_cal vendor_persist_audio_file:file rw_file_perms;
