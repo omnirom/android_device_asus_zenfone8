@@ -3095,4 +3095,3 @@ vendor/lib64/vendor.qti.sla.service@1.0.so
 vendor/lib64/vendor.qti.spu@1.0.so
 vendor/lib64/vendor.qti.spu@1.1.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
-vendor/ueventd.rc
