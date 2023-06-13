@@ -8,6 +8,7 @@
 
 # Audio Calibration
 /(vendor|system/vendor)/bin/AudioAmpCalibration                                                    u:object_r:audio_amp_cal_exec:s0
+/(vendor|system/vendor)/bin/dongle                                                                 u:object_r:zf_dongle_exec:s0
 
 # Camera
 /(vendor|system/vendor)/lib(64)?/libipebpsstriping\.so                                             u:object_r:same_process_hal_file:s0
