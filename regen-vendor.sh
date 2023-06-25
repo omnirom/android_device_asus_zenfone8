@@ -1184,6 +1184,7 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/libozowidening.so"
 
     # Power
+    "etc/task_profiles.json"
     "bin/hw/android.hardware.power-service"
     "etc/init/android.hardware.power-service.rc"
     "etc/vintf/manifest/power.xml"

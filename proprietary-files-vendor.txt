@@ -1111,7 +1111,6 @@ vendor/etc/sound_trigger_mixer_paths_qrd.xml
 vendor/etc/sound_trigger_platform_info.xml
 vendor/etc/ssg/ta_config.json
 vendor/etc/ssg/tz_whitelist.json
-vendor/etc/task_profiles.json
 vendor/etc/thermal-engine.conf
 vendor/etc/thermal_atd.conf
 vendor/etc/usb_audio_policy_configuration.xml
