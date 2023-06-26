@@ -24,6 +24,6 @@
 // Disables read remote device feature
 #define MAX_ACL_CONNECTIONS   16
 #define BLE_VND_INCLUDED   TRUE
-/* Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec */
-#define AVDT_NUM_SEPS 12
+
+#define AVDT_NUM_SEPS 35
 #endif
