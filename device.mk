@@ -235,6 +235,8 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor \
+    libcodec2_hidl@1.1.vendor \
+    libcodec2_vndk.vendor \
     libstagefright_softomx.vendor \
     libstagefrighthw
 

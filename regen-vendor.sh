@@ -1196,6 +1196,11 @@ VENDOR_SKIP_FILES_COMMON=(
     #"lib/hw/memtrack.default.so"
     "lib64/hw/android.hardware.memtrack@1.0-impl.so"
     #"lib64/hw/memtrack.default.so"
+    "lib/libcodec2_hidl@1.0.so"
+    "lib/libcodec2_vndk.so"
+    "lib64/libcodec2_hidl@1.0.so"
+    "lib64/libcodec2_hidl@1.1.so"
+    "lib64/libcodec2_vndk.so"
 
     # Overlays
     "overlay/FrameworksResTarget.apk"

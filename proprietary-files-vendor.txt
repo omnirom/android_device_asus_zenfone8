@@ -1734,8 +1734,6 @@ vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneoplookup.so
 vendor/lib/libcneqmiutils.so
-vendor/lib/libcodec2_hidl@1.0.so
-vendor/lib/libcodec2_vndk.so
 vendor/lib/libcom.qti.chinodeutils.so
 vendor/lib/libcomprcapture.so
 vendor/lib/libconfigdb.so
@@ -2577,9 +2575,6 @@ vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
 vendor/lib64/libcneqmiutils.so
-vendor/lib64/libcodec2_hidl@1.0.so
-vendor/lib64/libcodec2_hidl@1.1.so
-vendor/lib64/libcodec2_vndk.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcomprcapture.so
 vendor/lib64/libconfigdb.so
