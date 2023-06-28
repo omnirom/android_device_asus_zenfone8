@@ -1184,7 +1184,7 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/libFace3D_hlos.so"
     "lib/libhwbinder.so"
     "lib64/libhwbinder.so"
-    "lib64/libavservices_minijail.so"
+    "lib/libavservices_minijail.so"
     "lib64/libavservices_minijail.so"
     "lib64/libavservices_minijail_vendor.so"
     "etc/init/boringssl_self_test.rc"
