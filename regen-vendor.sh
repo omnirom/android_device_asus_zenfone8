@@ -712,6 +712,13 @@ VENDOR_SKIP_FILES_COMMON=(
     "etc/permissions/sku_yupik/android.hardware.sensor.stepdetector.xml"
 
     # Media
+    "etc/media_codecs_google_audio.xml"
+    "etc/media_codecs_google_c2.xml"
+    "etc/media_codecs_google_c2_audio.xml"
+    "etc/media_codecs_google_c2_video.xml"
+    "etc/media_codecs_google_telephony.xml"
+    "etc/media_codecs_google_video.xml"
+    "etc/media_codecs_google_video_le.xml"
     "etc/media_codecs_performance_shima_v1.xml"
     "etc/media_codecs_performance_shima_v2.xml"
     "etc/media_codecs_performance_shima_v3.xml"
