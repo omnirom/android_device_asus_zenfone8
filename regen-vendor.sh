@@ -175,6 +175,10 @@ VENDOR_SKIP_FILES_COMMON=(
     "etc/audio_policy_volumes.xml"
     "etc/bluetooth_qti_audio_policy_configuration.xml"
     "etc/bluetooth_qti_hearing_aid_audio_policy_configuration.xml"
+    "lib/hw/audio.r_submix.default.so"
+    "lib/hw/audio.usb.default.so"
+    "lib64/hw/audio.r_submix.default.so"
+    "lib64/hw/audio.usb.default.so"
     # Use prebuilt audio.primary.lahaina
     # "lib/hw/audio.primary.lahaina.so"
     # "lib64/hw/audio.primary.lahaina.so"
