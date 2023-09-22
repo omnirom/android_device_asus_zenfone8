@@ -36,6 +36,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     FrameworksResOverlay \
     FrameworksResVendor \
+    SettingsOverlay \
     SettingsProviderOverlay \
     SystemUIOverlay \
     TeleServiceOverlay \
