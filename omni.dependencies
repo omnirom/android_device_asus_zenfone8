@@ -3,7 +3,7 @@
     "remote": "omnirom",
     "repository": "android_device_qcom_caf-sepolicy",
     "target_path": "device/qcom/sepolicy",
-    "revision": "android-13.0"
+    "revision": "android-14.0"
   },
   {
     "remote": "omnirom",
