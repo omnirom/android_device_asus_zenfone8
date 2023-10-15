@@ -25,11 +25,11 @@
     "revision": "lineage-19.1-caf-sm8350"
   },
   {
-    "remote": "github",
-    "repository": "LineageOS/android_hardware_qcom_audio",
+    "remote": "omnirom",
+    "repository": "android_hardware_qcom_audio",
     "target_path": "hardware/qcom-caf/sm8350/audio",
     "override": "platform/hardware/qcom/audio",
-    "revision": "lineage-20.0-caf-sm8350"
+    "revision": "android-14.0-sm8350"
   },
   {
     "remote": "omnirom",
@@ -42,7 +42,7 @@
     "remote": "omnirom",
     "repository": "android_kernel_asus_sm8350",
     "target_path": "kernel/asus/sm8350",
-    "revision": "android-13.0"
+    "revision": "android-14.0"
   },
   {
      "remote": "omnirom",
