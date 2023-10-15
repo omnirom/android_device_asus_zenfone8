@@ -246,7 +246,8 @@ PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
     libcodec2_vndk.vendor \
     libstagefright_softomx.vendor \
-    libstagefrighthw
+    libstagefrighthw \
+    android.media.audio.common.types-V1-cpp
 
 # Net
 PRODUCT_PACKAGES += \
