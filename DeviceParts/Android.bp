@@ -9,7 +9,7 @@ android_app {
         "androidx.core_core",
         "androidx.preference_preference",
         "com.google.android.material_material",
-        "OmniLibCore",
+        "OmniLib",
         "OmniPreferenceTheme",
     ],
 
