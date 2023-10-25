@@ -17,4 +17,6 @@
          have distinct intensity levels -->
     <bool name="config_vibration_supports_multiple_intensities">true</bool>
 
+    <dimen name="udfps_lottie_translate_y">-200dp</dimen>
+
 </resources>
