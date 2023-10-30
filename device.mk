@@ -37,6 +37,7 @@ PRODUCT_PACKAGES += \
     FrameworksResOverlay \
     FrameworksResVendor \
     OmniRomResInternalOverlay \
+    SettingsOverlay \
     SettingsProviderOverlay \
     SystemUIOverlay \
     TeleServiceOverlay \
