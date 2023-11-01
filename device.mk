@@ -242,7 +242,6 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxG711Enc \
     libOmxQcelp13Enc \
-    libavservices_minijail \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor \
     libcodec2_hidl@1.1.vendor \
@@ -377,10 +376,3 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
-
-# Wifi Display
-PRODUCT_PACKAGES += \
-    libnl
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
