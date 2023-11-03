@@ -1385,7 +1385,6 @@ VENDOR_SKIP_FILES_COMMON=(
     "bin/wfdvndservice"
     "bin/wifidisplayhalservice"
     "etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc"
-    "etc/init/android.hardware.drm@1.3-service.widevine.rc"
     "etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc"
     "etc/init/wfdvndservice.rc"
     "etc/seccomp_policy/wfdhdcphalservice.policy"
