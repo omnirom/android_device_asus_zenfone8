@@ -20,7 +20,6 @@
 # product configuration (apps).
 #
 $(call inherit-product, vendor/asus/zenfone8/zenfone8-vendor.mk)
-$(call inherit-product, vendor/images/asus/zf8/zf8-app.mk)
 
 # fusefs / disable sdcardfs usage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
