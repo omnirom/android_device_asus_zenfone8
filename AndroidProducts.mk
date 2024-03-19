@@ -3,5 +3,5 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     omni_zenfone8-user \
-    omni_zenfone8-trunk_staging-userdebug \
+    omni_zenfone8-ap1a-userdebug \
     omni_zenfone8-eng
