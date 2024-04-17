@@ -105,16 +105,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final String DT2W_CONTROL_PATH = "/proc/driver/dclick";
 
     private static final int[] sSupportedGestures = new int[]{
-        KEY_DOUBLE_TAP,
-        KEY_GESTURE_E,
-        KEY_GESTURE_M,
-        KEY_GESTURE_S,
-        KEY_GESTURE_V,
-        KEY_GESTURE_W,
-        KEY_GESTURE_Z,
-        KEY_GESTURE_PAUSE,
-        KEY_GESTURE_FORWARD,
-        KEY_GESTURE_REWIND
     };
 
     private static final int[] sProxiCheckedGestures = new int[]{
