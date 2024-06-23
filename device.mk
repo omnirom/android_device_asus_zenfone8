@@ -251,7 +251,8 @@ PRODUCT_PACKAGES += \
     libcodec2_vndk.vendor \
     libstagefright_softomx.vendor \
     libstagefrighthw \
-    android.media.audio.common.types-V1-cpp
+    android.media.audio.common.types-V1-cpp \
+    libjsoncpp.vendor
 
 # Net
 PRODUCT_PACKAGES += \
@@ -305,7 +306,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor
+    android.hardware.radio.deprecated@1.0.vendor \
+    libcurl.vendor \
+    libsqlite.vendor
 
 # Sensors
 PRODUCT_COPY_FILES += \
