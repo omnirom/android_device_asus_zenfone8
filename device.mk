@@ -149,11 +149,10 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V1-ndk_platform.vendor \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
     libion \
     libtinyxml2 \
-    lights.qcom
+    lights.qcom \
+    vendor.qti.hardware.memtrack-service
 
 -include hardware/qcom-caf/sm8350/media/product.mk
 -include hardware/qcom-caf/sm8350/display/config/display-board.mk
