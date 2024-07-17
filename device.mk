@@ -255,6 +255,10 @@ PRODUCT_PACKAGES += \
     android.media.audio.common.types-V1-cpp \
     libjsoncpp.vendor
 
+# Mount Point symlink
+PRODUCT_PACKAGES += \
+    mnt_point_factory_symlink
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
