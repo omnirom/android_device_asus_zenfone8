@@ -1113,7 +1113,6 @@ vendor/etc/video_system_specs.json
 vendor/etc/vmmgr.conf
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/vendor_cmd.xml
-vendor/etc/wifi/wlan/WCNSS_qcom_cfg.ini
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/firmware/CAMERA_ICP.elf
 vendor/firmware/CAMERA_ICP_170.elf
@@ -1414,13 +1413,6 @@ vendor/firmware/widevine.b07
 vendor/firmware/widevine.mbn
 vendor/firmware/widevine.mdt
 vendor/firmware/wigig/wigig.ini
-vendor/firmware/wlan/qca_cld/qca6390/COUNTRY
-vendor/firmware/wlan/qca_cld/qca6390/wlan_mac.bin
-vendor/firmware/wlan/qca_cld/qca6750/COUNTRY
-vendor/firmware/wlan/qca_cld/qca6750/wlan_mac.bin
-vendor/firmware/wlan/qca_cld/wlan/COUNTRY
-vendor/firmware/wlan/qca_cld/wlan/WCNSS_qcom_cfg.ini
-vendor/firmware/wlan/qca_cld/wlan/wlan_mac.bin
 vendor/lib/android.hardware.camera.provider@2.4-external.so
 vendor/lib/android.hardware.camera.provider@2.4-legacy.so
 vendor/lib/android.hardware.sensors@2.0-ScopedWakelock.so

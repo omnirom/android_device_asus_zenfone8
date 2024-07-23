@@ -1357,6 +1357,7 @@ VENDOR_SKIP_FILES_COMMON=(
     "bin/wifilearner"
     "bin/hw/wpa_supplicant"
     "etc/init/android.hardware.wifi.supplicant-service.rc"
+    "etc/wifi/wlan/WCNSS_qcom_cfg.ini"
     "lib64/libkeystore-engine-wifi-hidl.so"
     "lib64/libkeystore-wifi-hidl.so"
     "lib/libwifi-hal-ctrl.so"
@@ -1379,6 +1380,13 @@ VENDOR_SKIP_FILES_COMMON=(
     "etc/init/vendor.asus.wifi.rttutil@1.0-service.rc"
     "lib64/vendor.asus.wifi.netutil@1.1.so"
     "lib64/vendor.asus.wifi.rttutil@1.0.so"
+    "firmware/wlan/qca_cld/qca6390/COUNTRY"
+    "firmware/wlan/qca_cld/qca6390/wlan_mac.bin"
+    "firmware/wlan/qca_cld/qca6750/COUNTRY"
+    "firmware/wlan/qca_cld/qca6750/wlan_mac.bin"
+    "firmware/wlan/qca_cld/wlan/COUNTRY"
+    "firmware/wlan/qca_cld/wlan/WCNSS_qcom_cfg.ini"
+    "firmware/wlan/qca_cld/wlan/wlan_mac.bin"
 
     # WifiDisplay
     "bin/wfdhdcphalservice"
