@@ -89,7 +89,6 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
-    libprocessgroup.vendor \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -109,14 +108,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml
 
-# Authsecret
-PRODUCT_PACKAGES += \
-    android.hardware.authsecret@1.0.vendor
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0.vendor
-
 # Biometric
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina
@@ -129,10 +120,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
-
-# Camera
-PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor
 
 # Charger images
 PRODUCT_PACKAGES += \
@@ -149,7 +136,6 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.common-V1-ndk_platform.vendor \
     libion \
     libtinyxml2 \
     lights.qcom \
@@ -158,19 +144,13 @@ PRODUCT_PACKAGES += \
 -include hardware/qcom-caf/sm8350/media/product.mk
 -include hardware/qcom-caf/sm8350/display/config/display-board.mk
 -include hardware/qcom-caf/sm8350/display/config/display-product.mk
--include vendor/qcom/opensource/display/config/display-product-vendor.mk
--include vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk
--include vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk
--include vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk
 
 PRODUCT_PACKAGES += \
     libtinyalsa
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4-service.clearkey \
-    android.hardware.drm@1.3.vendor \
-    libcrypto_shim.vendor
+    android.hardware.drm@1.4-service.clearkey
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -185,16 +165,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += qcom.fmradio
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
-
-# GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.1.vendor \
-    android.hardware.gnss.visibility_control@1.0.vendor \
-    android.hardware.gnss@2.1.vendor
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
@@ -206,9 +176,7 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor \
-    libhwbinder.vendor
+    android.hidl.base@1.0
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -218,10 +186,6 @@ PRODUCT_COPY_FILES += \
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := false
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -250,31 +214,15 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxG711Enc \
     libOmxQcelp13Enc \
-    libavservices_minijail.vendor \
-    libavservices_minijail_vendor \
-    libcodec2_hidl@1.1.vendor \
-    libcodec2_vndk.vendor \
-    libstagefright_softomx.vendor \
     libstagefrighthw \
-    android.media.audio.common.types-V1-cpp \
-    libjsoncpp.vendor
+    android.media.audio.common.types-V1-cpp
 
 # Mount Point symlink
 PRODUCT_PACKAGES += \
     mnt_point_factory_symlink
 
-# Net
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor
-
-# Neural Network
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor
-
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2.vendor \
-    android.hardware.secure_element@1.2.vendor \
     NfcNci \
     Tag \
     SecureElement \
@@ -288,7 +236,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
     android.hardware.power-service-qti
 
 # Prebuilt
@@ -310,14 +257,6 @@ PRODUCT_COPY_FILES += \
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    libcurl.vendor \
-    libsqlite.vendor
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -357,19 +296,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils_prd.xml \
     tcmiface
 
-# Tether offload
-PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload.config@1.0.vendor \
-    android.hardware.tetheroffload.control@1.0.vendor
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0.vendor
-
-# TrustedUI
-PRODUCT_PACKAGES += \
-    android.hidl.memory.block@1.0.vendor
-
 # Update engine
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -382,10 +308,6 @@ PRODUCT_HOST_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2.vendor
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
