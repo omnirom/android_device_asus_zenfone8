@@ -24,12 +24,6 @@
     "revision": "android-15-sm8350"
   },
   {
-    "remote": "github",
-    "repository": "LineageOS/android_hardware_qcom_media",
-    "target_path": "hardware/qcom-caf/sm8350/media",
-    "revision": "lineage-19.1-caf-sm8350"
-  },
-  {
     "remote": "omnirom",
     "repository": "android_hardware_qcom_audio",
     "target_path": "hardware/qcom-caf/sm8350/audio",
