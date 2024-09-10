@@ -63,6 +63,9 @@ function blob_fixup() {
         sed -i 's|product|system_ext|g' "${2}"
         sed -i 's|xml version="2.0"|xml version="1.0"|g' "${2}"
         ;;
+    vendor/lib/libwvhidl.so)
+        "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
+        ;;
     esac
 }
 
