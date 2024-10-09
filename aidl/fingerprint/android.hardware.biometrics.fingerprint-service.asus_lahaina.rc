@@ -1,3 +1,7 @@
+on boot
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
+    chmod 0444 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
+
 service vendor.fingerprint-default /vendor/bin/hw/android.hardware.biometrics.fingerprint-service.asus_lahaina
     class hal
     user system
