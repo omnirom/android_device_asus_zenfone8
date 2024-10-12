@@ -35,7 +35,7 @@
     "remote": "omnirom",
     "repository": "android_hardware_qcom_wlan",
     "target_path": "hardware/qcom-caf/wlan",
-    "revision": "android-14.0-caf"
+    "revision": "android-15-caf"
    },
   {
     "remote": "omnirom",
