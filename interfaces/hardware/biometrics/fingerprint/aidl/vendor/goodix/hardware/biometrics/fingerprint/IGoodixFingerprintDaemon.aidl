@@ -4,6 +4,6 @@ import vendor.goodix.hardware.biometrics.fingerprint.IGoodixFingerprintDaemonCal
 
 @VintfStability
 interface IGoodixFingerprintDaemon {
-    setNotify(IGoodixFingerprintDaemonCallback Callback);
-    sendCommand(int cmd, int[] data);
-};
+    void setNotify(IGoodixFingerprintDaemonCallback Callback);
+    void sendCommand(int cmd, int data);
+}
