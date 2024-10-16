@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2023 The LineageOS Project
  *
@@ -114,3 +113,8 @@ static UdfpsHandler* create() {
 static void destroy(UdfpsHandler* handler) {
     delete handler;
 }
+
+extern "C" UdfpsHandlerFactory UDFPS_HANDLER_FACTORY = {
+        .create = create,
+        .destroy = destroy,
+};

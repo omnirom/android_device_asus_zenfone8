@@ -41,7 +41,7 @@ class Fingerprint : public BnFingerprint {
     }
 
   private:
-    static fingerprint_device_t* openSensorHal(const char* class_name);
+    static fingerprint_device_t* openSensorHal();
     static SensorLocation getSensorLocation();
     static void notify(const fingerprint_msg_t* msg);
 
@@ -50,6 +50,7 @@ class Fingerprint : public BnFingerprint {
     FingerprintSensorType mSensorType;
 
     fingerprint_device_t* mDevice;
+    UdfpsHandlerFactory* mUdfpsHandlerFactory;
     UdfpsHandler* mUdfpsHandler;
 };
 

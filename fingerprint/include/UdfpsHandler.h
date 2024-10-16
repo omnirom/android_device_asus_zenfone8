@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2022 The LineageOS Project
  *
@@ -47,3 +46,5 @@ struct UdfpsHandlerFactory {
     UdfpsHandler* (*create)();
     void (*destroy)(UdfpsHandler* handler);
 };
+
+UdfpsHandlerFactory* getUdfpsHandlerFactory();

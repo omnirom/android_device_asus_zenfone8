@@ -37,17 +37,11 @@ Fingerprint::Fingerprint() {
     if (mDevice) {
         ALOGI("fingerprint HAL already opened");
     } else {
-        std::string sensorModulesList = Fingerprint::cfg().get<std::string>("sensor_modules");
-        std::vector<std::string> sensorModules = ::android::base::Split(sensorModulesList, ",");
-        for (const std::string& class_name : sensorModules) {
-            mDevice = openSensorHal(class_name.c_str());
+            mDevice = openSensorHal();
             if (!mDevice) {
-                ALOGE("Can't open HAL module, class %s", class_name.c_str());
-                continue;
+                ALOGE("Can't open HAL module");
             }
-            ALOGI("Opened fingerprint HAL, class %s", class_name.c_str());
-            break;
-        }
+            ALOGI("Opened fingerprint HAL");
         if (!mDevice) {
             ALOGE("Can't open any fingerprint HAL module");
         }
@@ -69,12 +63,17 @@ Fingerprint::Fingerprint() {
         } else {
             mSensorType = FingerprintSensorType::UNDER_DISPLAY_OPTICAL;
         }
-        /* mUdfpsHandler = mUdfpsHandlerFactory->create();
-        if (!mUdfpsHandler) {
-            ALOGE("Can't create UdfpsHandler");
+        mUdfpsHandlerFactory = getUdfpsHandlerFactory();
+        if (!mUdfpsHandlerFactory) {
+            ALOGE("Can't get UdfpsHandlerFactory");
         } else {
-            mUdfpsHandler->init(mDevice);
-        }*/
+            mUdfpsHandler = mUdfpsHandlerFactory->create();
+            if (!mUdfpsHandler) {
+                ALOGE("Can't create UdfpsHandler");
+            } else {
+                mUdfpsHandler->init(mDevice);
+            }
+        }
     } else if (sensorTypeProp == "side") {
         mSensorType = FingerprintSensorType::POWER_BUTTON;
     } else if (sensorTypeProp == "home") {
@@ -91,6 +90,9 @@ Fingerprint::Fingerprint() {
 
 Fingerprint::~Fingerprint() {
     ALOGV("~Fingerprint()");
+    if (mUdfpsHandler) {
+        mUdfpsHandlerFactory->destroy(mUdfpsHandler);
+    }
     if (mDevice == nullptr) {
         ALOGE("No valid device");
         return;
@@ -103,11 +105,11 @@ Fingerprint::~Fingerprint() {
     mDevice = nullptr;
 }
 
-fingerprint_device_t* Fingerprint::openSensorHal(const char* class_name) {
+fingerprint_device_t* Fingerprint::openSensorHal() {
     const hw_module_t* hw_mdl = nullptr;
 
     ALOGD("Opening fingerprint hal library...");
-    if (hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, class_name, &hw_mdl) != 0) {
+    if (hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_mdl) != 0) {
         ALOGE("Can't open fingerprint HW Module");
         return nullptr;
     }

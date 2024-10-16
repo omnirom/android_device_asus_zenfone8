@@ -22,7 +22,6 @@ vendor.fp.cali.ready                u:object_r:vendor_gx_fpd_prop:s0
 ro.hardware.fp_position             u:object_r:vendor_gx_fpd_prop:s0
 ro.hardware.fp_shape                u:object_r:vendor_gx_fpd_prop:s0
 persist.vendor.asus.fp.wakeup       u:object_r:vendor_gx_fpd_prop:s0
-persist.vendor.fingerprint.            u:object_r:vendor_gx_fpd_prop:s0
 vendor.fp.cali.shipping.check       u:object_r:vendor_gx_fpd_prop:s0
 vendor.screen.rotation              u:object_r:vendor_gx_fpd_prop:s0
 vendor.asus.touch_control_          u:object_r:vendor_gx_fpd_prop:s0

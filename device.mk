@@ -118,7 +118,8 @@ PRODUCT_PACKAGES += \
 
 # Biometric
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.asus_lahaina
+    android.hardware.biometrics.fingerprint-service.asus_lahaina \
+    libudfpshandler.sake
 
 # Boot control
 PRODUCT_PACKAGES += \
