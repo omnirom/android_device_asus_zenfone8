@@ -136,7 +136,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libion \
     libtinyxml2 \
-    lights.qcom \
     vendor.qti.hardware.memtrack-service
 
 -include hardware/qcom-caf/sm8350/media/product.mk
@@ -185,7 +184,7 @@ PRODUCT_ENABLE_UFFD_GC := false
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.qti
+    android.hardware.light-service.lineage
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
