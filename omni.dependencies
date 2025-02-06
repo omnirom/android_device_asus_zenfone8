@@ -21,7 +21,7 @@
     "remote": "omnirom",
     "repository": "android_hardware_qcom_display",
     "target_path": "hardware/qcom-caf/sm8350/display",
-    "revision": "android-14.0-sm8350"
+    "revision": "android-15-sm8350"
   },
   {
     "remote": "github",
@@ -33,7 +33,7 @@
     "remote": "omnirom",
     "repository": "android_hardware_qcom_audio",
     "target_path": "hardware/qcom-caf/sm8350/audio",
-    "revision": "android-14.0-sm8350"
+    "revision": "android-15-sm8350"
   },
   {
     "remote": "omnirom",
