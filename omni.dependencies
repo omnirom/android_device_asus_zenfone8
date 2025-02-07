@@ -51,7 +51,7 @@
     "remote": "omnirom",
     "repository": "android_kernel_asus_sm8350",
     "target_path": "kernel/asus/sm8350",
-    "revision": "android-14.0"
+    "revision": "android-15"
   },
   {
      "remote": "omnirom",
