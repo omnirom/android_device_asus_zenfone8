@@ -219,7 +219,12 @@ PRODUCT_PACKAGES += \
 
 # Mount Point symlink
 PRODUCT_PACKAGES += \
-    mnt_point_factory_symlink
+    mnt_point_factory_symlink \
+    vendor_asusfw_mountpoint \
+    vendor_bt_firmware_mountpoint \
+    vendor_dsp_mountpoint \
+    vendor_firmware_mnt_mountpoint \
+    vendor_xrom_mountpoint
 
 # NFC
 PRODUCT_PACKAGES += \
