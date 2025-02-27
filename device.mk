@@ -180,7 +180,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
 
 # Kernel
-PRODUCT_ENABLE_UFFD_GC := false
+PRODUCT_ENABLE_UFFD_GC := true
 
 # Lights
 PRODUCT_PACKAGES += \
