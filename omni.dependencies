@@ -69,7 +69,7 @@
      "remote": "omnirom",
      "repository": "android_vendor_qcom_opensource_interfaces",
      "target_path": "vendor/qcom/opensource/interfaces",
-     "revision": "android-13.0"
+     "revision": "android-15"
    },
    {
      "remote": "gitlab",
@@ -94,5 +94,11 @@
     "repository": "android_vendor_qcom_opensource_power",
     "target_path": "vendor/qcom/opensource/power",
     "revision": "android-13.0"
-  }
+   },
+   {
+    "remote": "github",
+    "repository": "LineageOS/android_vendor_qcom_opensource_core-utils-vendor",
+    "target_path": "vendor/qcom/opensource/core-utils-vendor",
+    "revision": "lineage-22.1"
+   }
 ]
