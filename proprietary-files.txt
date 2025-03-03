@@ -1,5 +1,5 @@
 # ANT+
--system_ext/app/AntHalService-Soong/AntHalService-Soong.apk
+system_ext/app/AntHalService-Soong/AntHalService-Soong.apk
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Audio
@@ -7,7 +7,7 @@ system_ext/etc/cdma_call_conf.xml
 
 # Bluetooth
 system_ext/etc/permissions/audiosphere.xml
--system_ext/framework/audiosphere.jar
+system_ext/framework/audiosphere.jar
 
 # Camera
 system/lib64/DataSet/arch/DIT_List.cfg
@@ -19,20 +19,20 @@ system/lib64/libxditk_ditArchLIB.so
 system/lib64/libxditk_ditBSP.so
 system/lib64/libxditk_ditBSP_JNI.so
 system/lib64/libxditk_ISP.so
--system/priv-app/AsusCamera/AsusCamera.apk
+system/priv-app/AsusCamera/AsusCamera.apk
 
 # CNE
--system_ext/framework/com.quicinc.cne.api-V1.0-java.jar
--system_ext/framework/com.quicinc.cne.api-V1.1-java.jar
--system_ext/framework/com.quicinc.cne.constants-V1.0-java.jar
--system_ext/framework/com.quicinc.cne.constants-V2.0-java.jar
--system_ext/framework/com.quicinc.cne.constants-V2.1-java.jar
--system_ext/framework/vendor.qti.hardware.data.cne.internal.api-V1.0-java.jar
--system_ext/framework/vendor.qti.hardware.data.cne.internal.constants-V1.0-java.jar
--system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.0-java.jar
--system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.1-java.jar
--system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.2-java.jar
--system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.3-java.jar
+system_ext/framework/com.quicinc.cne.api-V1.0-java.jar
+system_ext/framework/com.quicinc.cne.api-V1.1-java.jar
+system_ext/framework/com.quicinc.cne.constants-V1.0-java.jar
+system_ext/framework/com.quicinc.cne.constants-V2.0-java.jar
+system_ext/framework/com.quicinc.cne.constants-V2.1-java.jar
+system_ext/framework/vendor.qti.hardware.data.cne.internal.api-V1.0-java.jar
+system_ext/framework/vendor.qti.hardware.data.cne.internal.constants-V1.0-java.jar
+system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.0-java.jar
+system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.1-java.jar
+system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.2-java.jar
+system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.3-java.jar
 system_ext/lib64/com.quicinc.cne.api@1.0.so
 system_ext/lib64/com.quicinc.cne.api@1.1.so
 system_ext/lib64/com.quicinc.cne.constants@1.0.so
@@ -50,13 +50,13 @@ system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.2.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.3.so
 
 # Device
--system_ext/app/DeviceInfo/DeviceInfo.apk
--system_ext/app/DeviceStatisticsService/DeviceStatisticsService.apk
+system_ext/app/DeviceInfo/DeviceInfo.apk
+system_ext/app/DeviceStatisticsService/DeviceStatisticsService.apk
 
 # Display
 product/etc/permissions/com.qti.snapdragon.sdk.display.xml
--product/framework/com.qti.snapdragon.sdk.display.jar
--system_ext/app/colorservice/colorservice.apk
+product/framework/com.qti.snapdragon.sdk.display.jar
+system_ext/app/colorservice/colorservice.apk
 system_ext/lib64/libsdm-disp-apis.qti.so
 system_ext/lib64/libsd_sdk_display.qti.so
 system_ext/lib64/vendor.display.color@1.0.so
@@ -67,20 +67,20 @@ system_ext/lib64/vendor.display.postproc@1.0.so
 system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # DPM
--system/framework/tcmclient.jar
+system/framework/tcmclient.jar
 system_ext/bin/dpmd
 system_ext/etc/dpm/dpm.conf
 system_ext/etc/init/dpmd.rc
 system_ext/etc/permissions/com.qti.dpmframework.xml
 system_ext/etc/permissions/dpmapi.xml
--system_ext/framework/com.qti.dpmframework.jar
--system_ext/framework/dpmapi.jar
+system_ext/framework/com.qti.dpmframework.jar
+system_ext/framework/dpmapi.jar
 system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
 system_ext/lib64/libdpmctmgr.so
 system_ext/lib64/libdpmfdmgr.so
 system_ext/lib64/libdpmframework.so
 system_ext/lib64/libdpmtcm.so
--system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
+system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 
 # FM
 system_ext/lib64/fm_helium.so
@@ -88,10 +88,10 @@ system_ext/lib64/libfm-hci.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Gallery (Use Git LFS)
--system/priv-app/AsusGallery/AsusGallery.apk
+system/priv-app/AsusGallery/AsusGallery.apk
 
 # GalleryBurst
--system/priv-app/AsusGalleryBurst/AsusGalleryBurst.apk
+system/priv-app/AsusGalleryBurst/AsusGalleryBurst.apk
 
 # GalleryBurst Video Editor
 system/etc/videoeditor/Charming.mfim
@@ -115,7 +115,7 @@ system/etc/videoeditor7/fx/6439CF7E-42D5-4239-8187-358323292FF4.videofx
 system/etc/videoeditor7/fx/749C7148-F6C7-418A-B177-3493994A5F84.videofx
 system/etc/videoeditor7/fx/7D8A1839-B7D3-4C91-AD7A-8FB920322818.videofx
 system/etc/videoeditor7/fx/8615918E-FEB9-47F8-AEAA-B648E61E9314.videofx
-system/system/etc/videoeditor7/fx/89B2D082-5F47-4A6D-9FD0-9F1BB053F6A7.videofx
+system/etc/videoeditor7/fx/89B2D082-5F47-4A6D-9FD0-9F1BB053F6A7.videofx
 system/etc/videoeditor7/fx/A8A4344D-45DA-460F-A18F-C0E2355FE864.videofx
 system/etc/videoeditor7/fx/B7F1F498-B310-4E2D-9A75-7D8AFBBC71D8.videofx
 system/etc/videoeditor7/fx/BCD1FAAD-D5C5-468F-A4F2-1C2138F485C0.videofx
@@ -162,15 +162,15 @@ system_ext/etc/permissions/com.qualcomm.location.xml
 system_ext/etc/permissions/izat.xt.srv.xml
 system_ext/etc/permissions/privapp-permissions-com.qualcomm.location.xml
 system_ext/etc/permissions/com.qualcomm.qti.izattools.xml
--system_ext/framework/com.qti.location.sdk.jar
--system_ext/framework/izat.xt.srv.jar
--system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk|768cab025cf8427b349a8358ca86a964fe8803ee
+system_ext/framework/com.qti.location.sdk.jar
+system_ext/framework/izat.xt.srv.jar
+system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk|768cab025cf8427b349a8358ca86a964fe8803ee
 
 # HotwordEnrollment
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk;PRESIGNED
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk;PRESIGNED
+product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk;PRESIGNED
+product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk;PRESIGNED
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
--system_ext/framework/com.android.hotwordenrollment.common.util.jar
+system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # MirarCast
 system_ext/bin/sigma_miracasthalservice
@@ -183,8 +183,8 @@ system_ext/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 
 # Power
--system/framework/QPerformance.jar
--system/framework/UxPerformance.jar
+system/framework/QPerformance.jar
+system/framework/UxPerformance.jar
 
 # Telephony
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
@@ -193,12 +193,12 @@ system_ext/etc/permissions/qti_permissions.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
--system_ext/framework/qcrilhook.jar
--system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
--system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+system_ext/framework/qcrilhook.jar
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
 # Wlan
--system_ext/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
--system_ext/framework/vendor.qti.hardware.data.iwlan-V1.1-java.jar
+system_ext/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
+system_ext/framework/vendor.qti.hardware.data.iwlan-V1.1-java.jar
 system_ext/lib64/vendor.qti.hardware.data.iwlan@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.iwlan@1.1.so
