@@ -1405,7 +1405,6 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib/libDxHdcp.so"
     "lib/libFileMux_proprietary.so"
     "lib/libmm-hdcpmgr.so"
-    "lib/libmmosal.so"
     "lib/libmmrtpdecoder_proprietary.so"
     "lib/libmmrtpencoder_proprietary.so"
     "lib/libwfdaac_vendor.so"

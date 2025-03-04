@@ -31,16 +31,26 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
+        'com.qualcomm.qti.dpm.api@1.0',
+        'vendor.qti.diaghal@1.0',
+        'vendor.qti.imsrtpservice@3.0',
+        'libxditk_DIT_Manager',
+        'libxditk_ISP',
+        'libxditk_arch',
+        'libxditk_ditArchLIB',
+        'libxditk_ditBSP',
+        'libxditk_ditBSP_JNI',
     ): lib_fixup_vendor_suffix,
     (
+        'libwpa_client',
     ): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
-    ('system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml',
-     'system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml'): blob_fixup()
-        .regex_replace('system/product', 'system_ext')
-        .regex_replace('xml version="2.0"', 'xml version="1.0"'),
+    ('system/lib64/libxditk_ISP.so',
+     'system/lib64/libxditk_LightArt.so',
+     'system/lib64/libxditk_ditArchLIB.so'): blob_fixup()
+        .replace_needed('libOpenCL.so', 'libOpenCL_system.so'),
     'system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk': blob_fixup()
         .apktool_patch('blob-patches/com.qualcomm.location.patch', '-r'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
@@ -53,7 +63,6 @@ module = ExtractUtilsModule(
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
-    check_elf=False,
 )
 
 module.add_proprietary_file('proprietary-files-product.txt')
