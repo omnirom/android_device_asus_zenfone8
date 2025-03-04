@@ -19,6 +19,7 @@ package org.omnirom.device;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,6 +33,9 @@ public class TileActivity extends AppCompatActivity {
             intent.setPackage("org.omnirom.device");
             intent.setAction("org.omnirom.device.DEVICE_SETTING_PAGE");
             startActivity(intent);
+        }
+        if (className.equals("org.omnirom.device.VolumeTile")) {
+            startActivity(new Intent(Settings.ACTION_SOUND_SETTINGS));
         }
         finish();
     }
