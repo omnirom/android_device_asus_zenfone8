@@ -329,6 +329,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Soundtrigger
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.3-impl
+
 # Systemhelper
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.systemhelper@1.0
