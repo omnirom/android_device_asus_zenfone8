@@ -323,6 +323,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 PRODUCT_PACKAGES += \
+    android.hardware.sensors-service.multihal \
     sensors.sake
 
 # Soong namespaces
