@@ -97,7 +97,6 @@ vendor/bin/acvp_test
 vendor/bin/adpl
 vendor/bin/adsprpcd
 vendor/bin/athdiag
-vendor/bin/audioadsprpcd
 vendor/bin/audioflacapp
 vendor/bin/camera_check_xvs
 vendor/bin/camera_flash
@@ -411,7 +410,6 @@ vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/etc/init/vendor.pixelworks.hardware.display.iris-service.rc
 vendor/etc/init/vendor.pixelworks.hardware.feature.irisfeature-service.rc
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
-vendor/etc/init/vendor.qti.audio-adsprpc-service.rc
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
 vendor/etc/init/vendor.qti.diag.rc
 vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc
