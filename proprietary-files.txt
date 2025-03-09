@@ -19,7 +19,7 @@ system/lib64/libxditk_arch.so
 system/lib64/libxditk_ditArchLIB.so
 system/lib64/libxditk_ditBSP.so
 system/lib64/libxditk_ditBSP_JNI.so
-system/priv-app/AsusCamera/AsusCamera.apk
+system/priv-app/AsusCamera/AsusCamera.apk;OVERRIDES=Camera2
 
 # DPM
 system/framework/tcmclient.jar
