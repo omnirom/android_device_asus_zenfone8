@@ -32,6 +32,7 @@
 
 # NFC
 /dev/pn553                                                                                         u:object_r:nfc_device:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.nfc@1\.2-service.asus                        u:object_r:hal_nfc_default_exec:s0
 
 # Power
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service-qti                                u:object_r:hal_power_default_exec:s0
