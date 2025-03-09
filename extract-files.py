@@ -53,6 +53,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libOpenCL.so', 'libOpenCL_system.so'),
     'system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk': blob_fixup()
         .apktool_patch('blob-patches/com.qualcomm.location.patch', '-r'),
+    'vendor/bin/hw/android.hardware.secure_element@1.2-service': blob_fixup()
+        .replace_needed('ese_spi_nxp.so', 'ese_spi_nxp_prebuilt.so'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
         .add_needed('libcrypto_shim.so'),
 }  # fmt: skip

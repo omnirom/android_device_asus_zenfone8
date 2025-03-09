@@ -1621,7 +1621,7 @@ vendor/lib/com.qualcomm.qti.uceservice@2.1.so
 vendor/lib/com.qualcomm.qti.uceservice@2.2.so
 vendor/lib/com.qualcomm.qti.uceservice@2.3.so
 vendor/lib/ese_client.so
-vendor/lib/ese_spi_nxp.so
+vendor/lib/ese_spi_nxp.so:vendor/lib/ese_spi_nxp_prebuilt.so;FIX_SONAME
 vendor/lib/ftm_fm_lib.so
 vendor/lib/hal_libnfc.so
 vendor/lib/lib-imsSDP.so
@@ -2332,7 +2332,7 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
 vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
 vendor/lib64/deviceInfoServiceModuleNr.so
 vendor/lib64/ese_client.so
-vendor/lib64/ese_spi_nxp.so
+vendor/lib64/ese_spi_nxp.so:vendor/lib64/ese_spi_nxp_prebuilt.so;FIX_SONAME
 vendor/lib64/ftm_fm_lib.so
 vendor/lib64/hal_libnfc.so
 vendor/lib64/lib-imsSDP.so
