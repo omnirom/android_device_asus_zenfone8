@@ -1047,13 +1047,7 @@ vendor/etc/libnfc-nxp_JP.conf
 vendor/etc/libnfc-nxp_RF.conf
 vendor/etc/libnfc-nxp_RF_JP.conf
 vendor/etc/lowi.conf
-vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_c2.xml
-vendor/etc/media_codecs_lahaina.xml
-vendor/etc/media_codecs_lahaina_vendor.xml
-vendor/etc/media_codecs_performance.xml
-vendor/etc/media_codecs_performance_lahaina.xml
-vendor/etc/media_codecs_performance_lahaina_vendor.xml
 vendor/etc/media_codecs_vendor_audio.xml
 vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_V1_0.xml
