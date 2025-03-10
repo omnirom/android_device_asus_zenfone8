@@ -209,8 +209,7 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxG711Enc \
     libOmxQcelp13Enc \
-    libstagefrighthw \
-    android.media.audio.common.types-V1-cpp
+    libstagefrighthw
 
 # Mount Point symlink
 PRODUCT_PACKAGES += \
