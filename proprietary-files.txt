@@ -1,3 +1,6 @@
+# Alarm
+product/app/PowerOffAlarm/PowerOffAlarm.apk
+
 # ANT+
 system_ext/app/AntHalService-Soong/AntHalService-Soong.apk
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
@@ -8,6 +11,7 @@ system_ext/etc/cdma_call_conf.xml
 # Bluetooth
 system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
+system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
 # Camera
 system/lib64/DataSet/arch/DIT_List.cfg
@@ -121,6 +125,30 @@ product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAG
 product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk;PRESIGNED
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
+
+# IMS
+system_ext/lib64/lib-imsvideocodec.so
+system_ext/lib64/lib-imsvt.so
+system_ext/lib64/lib-imsvtextutils.so
+system_ext/lib64/lib-imsvtutils.so
+system_ext/lib64/libdiag_system.so
+system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
+system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
+system_ext/lib64/vendor.qti.diaghal@1.0.so
+system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
+system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
+system_ext/priv-app/ims/ims.apk
+
+# QTI Telephony
+product/app/uimgbaservice/uimgbaservice.apk
+product/etc/permissions/UimGba.xml
+product/etc/permissions/UimGbaManager.xml
+product/framework/uimgbalibrary.jar
+product/framework/uimgbamanagerlibrary.jar
+system_ext/app/DynamicDDSService/DynamicDDSService.apk
+system_ext/etc/permissions/embms-noship_product_privapp_permissions_qti.xml
+system_ext/etc/permissions/embms.xml
+system_ext/framework/embmslibrary.jar
 
 # Telephony
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml

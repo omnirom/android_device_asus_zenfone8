@@ -9,7 +9,6 @@ set -e
 # List of files to sort
 PROPRIETARY_FILES_TXT=(
     "proprietary-files.txt"
-    "proprietary-files-product.txt"
 )
 
 # Load sort-blobs-list.py and do some sanity checks

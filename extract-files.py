@@ -73,7 +73,6 @@ module = ExtractUtilsModule(
     namespace_imports=namespace_imports,
 )
 
-module.add_proprietary_file('proprietary-files-product.txt')
 module.add_proprietary_file('proprietary-files-vendor.txt')
 
 if __name__ == '__main__':
