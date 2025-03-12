@@ -881,7 +881,6 @@ vendor/etc/permissions/android.hardware.camera.front.xml
 vendor/etc/permissions/android.hardware.camera.full.xml
 vendor/etc/permissions/android.hardware.camera.raw.xml
 vendor/etc/permissions/android.hardware.fingerprint.xml
-vendor/etc/permissions/android.hardware.light.xml
 vendor/etc/permissions/android.hardware.location.gps.xml
 vendor/etc/permissions/android.hardware.nfc.hce.xml
 vendor/etc/permissions/android.hardware.nfc.hcef.xml
@@ -910,9 +909,6 @@ vendor/etc/permissions/android.software.vulkan.deqp.level.xml
 vendor/etc/permissions/com.android.nfc_extras.xml
 vendor/etc/permissions/com.nxp.mifare.xml
 vendor/etc/permissions/handheld_core_hardware.xml
-vendor/etc/permissions/qti_fingerprint_interface.xml
-vendor/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
-vendor/etc/permissions/vendor.qti.hardware.factory.xml
 vendor/etc/pwr/PowerFeatureConfig.xml
 vendor/etc/pwr/VideoPowerOptFeature.xml
 vendor/etc/qcril_database/upgrade/config/6.0_config.sql
