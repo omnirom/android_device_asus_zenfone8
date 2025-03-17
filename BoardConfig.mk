@@ -95,13 +95,15 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 # Display
 TARGET_USES_HWC2 := true
 TARGET_SCREEN_DENSITY := 440
-SOONG_CONFIG_qtidisplay_udfps := true
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
+# Fingerprint
+TARGET_USES_FOD_ZPOS := true
 
 # Global
 BOARD_USES_QCOM_HARDWARE := true
