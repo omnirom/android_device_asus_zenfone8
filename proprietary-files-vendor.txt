@@ -1405,7 +1405,7 @@ vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 vendor/lib/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib/hw/vendor.qti.sla.service@1.0-impl.so
 vendor/lib/hw/vulkan.adreno.so
-vendor/lib/mediadrm/libwvdrmengine.so;DISABLE_CHECKELF
+vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/modules/modules.blocklist
 vendor/lib/rfsa/adsp/tests/libbenchmark_skel.so
 vendor/lib/rfsa/adsp/tests/libfastrpc_tests1_skel.so
@@ -2079,7 +2079,7 @@ vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/hw/vendor.qti.sla.service@1.0-impl.so
 vendor/lib64/hw/vulkan.adreno.so
-vendor/lib64/mediadrm/libwvdrmengine.so;DISABLE_CHECKELF
+vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
