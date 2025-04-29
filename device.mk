@@ -173,8 +173,7 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
 # Init
-PRODUCT_PACKAGES += \
-    libinit_zenfone8
+$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_zenfone8)
 
 # Input
 PRODUCT_COPY_FILES += \
