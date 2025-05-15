@@ -60,9 +60,13 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('ese_spi_nxp.so', 'ese_spi_nxp_prebuilt.so'),
     ('vendor/lib/nfc_nci_nxp_prebuilt.so',
      'vendor/lib64/nfc_nci_nxp_prebuilt.so'): blob_fixup()
-        .replace_needed('ese_spi_nxp.so', 'ese_spi_nxp_prebuilt.so'),
+        .replace_needed('ese_spi_nxp.so', 'ese_spi_nxp_prebuilt.so')
+        .add_needed('libbase_shim.so'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
         .add_needed('libcrypto_shim.so'),
+    ('vendor/lib/ese_spi_nxp_prebuilt.so',
+     'vendor/lib64/ese_spi_nxp_prebuilt.so'): blob_fixup()
+        .add_needed('libbase_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
