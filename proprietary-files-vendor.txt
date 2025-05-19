@@ -2361,7 +2361,7 @@ vendor/lib64/libmiracast.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libmmcamera_bestats.so
 vendor/lib64/libmmcamera_cac3.so
-vendor/lib64/libmmcamera_faceproc.so;DISABLE_CHECKELF
+vendor/lib64/libmmcamera_faceproc.so
 vendor/lib64/libmmcamera_faceproc2.so
 vendor/lib64/libmmcamera_lscv35.so
 vendor/lib64/libmmcamera_mfnr.so
@@ -2553,12 +2553,12 @@ vendor/lib64/libwebrtc_audio_preprocessing.so
 vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libwvhidl.so
-vendor/lib64/libxditk_DIT_Manager.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_ISP.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_arch.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_ditArchLIB.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_ditBSP.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_ditBSP_JNI.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
+vendor/lib64/libxditk_DIT_Manager.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ISP.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_arch.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditArchLIB.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditBSP.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditBSP_JNI.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/nfc_nci_nxp.so:vendor/lib64/nfc_nci_nxp_prebuilt.so;FIX_SONAME
