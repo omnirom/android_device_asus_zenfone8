@@ -141,6 +141,8 @@ TARGET_KERNEL_SOURCE := kernel/asus/sm8350
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := r530567
+TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
