@@ -1740,7 +1740,6 @@ vendor/lib/libqti-utils.so
 vendor/lib/libqtigef.so
 vendor/lib/libqtikeymaster4.so
 vendor/lib/libqtjsonhelper.so
-vendor/lib/libqtnodes.so;DISABLE_CHECKELF
 vendor/lib/librcc.so
 vendor/lib/librcmask.so
 vendor/lib/librecovery_updater.so
@@ -2465,7 +2464,6 @@ vendor/lib64/libqti-utils.so
 vendor/lib64/libqtigef.so
 vendor/lib64/libqtikeymaster4.so
 vendor/lib64/libqtjsonhelper.so
-vendor/lib64/libqtnodes.so;DISABLE_CHECKELF
 vendor/lib64/librcc.so
 vendor/lib64/librcmask.so
 vendor/lib64/librecovery_updater.so
