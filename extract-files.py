@@ -42,7 +42,6 @@ lib_fixups: lib_fixups_user_type = {
         'libxditk_ditBSP_JNI',
     ): lib_fixup_vendor_suffix,
     (
-        'libwpa_client',
     ): lib_fixup_remove,
 }
 

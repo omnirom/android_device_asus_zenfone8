@@ -184,13 +184,13 @@ vendor/bin/lightsensor_selection
 vendor/bin/lightsensor_status
 vendor/bin/loadalgo
 vendor/bin/loc_launcher
-vendor/bin/lowi-server;DISABLE_CHECKELF
+vendor/bin/lowi-server
 vendor/bin/lowirpcd
 vendor/bin/mlid
 vendor/bin/mmid
 vendor/bin/mount_apd.sh
 vendor/bin/msm_irqbalance
-vendor/bin/mutualex;DISABLE_CHECKELF
+vendor/bin/mutualex
 vendor/bin/myftm
 vendor/bin/netmgrd
 vendor/bin/parse.simcode.sh
@@ -1562,7 +1562,7 @@ vendor/lib/libchiarcutils.so
 vendor/lib/libchilog.so
 vendor/lib/libcirrusspkrprot.so
 vendor/lib/libcld80211.so
-vendor/lib/libcne.so;DISABLE_CHECKELF
+vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneoplookup.so
 vendor/lib/libcneqmiutils.so
@@ -1826,7 +1826,7 @@ vendor/lib/libvpptestutils.so
 vendor/lib/libwapi_cert.so
 vendor/lib/libwebrtc_audio_preprocessing.so
 vendor/lib/libwms.so
-vendor/lib/libwqe.so;DISABLE_CHECKELF
+vendor/lib/libwqe.so
 vendor/lib/libxml.so
 vendor/lib/libxtadapter.so
 vendor/lib/nfc_nci_nxp.so:vendor/lib/nfc_nci_nxp_prebuilt.so;FIX_SONAME
@@ -2264,7 +2264,7 @@ vendor/lib64/libchiarcutils.so
 vendor/lib64/libchilog.so
 vendor/lib64/libcirrusspkrprot.so
 vendor/lib64/libcld80211.so
-vendor/lib64/libcne.so;DISABLE_CHECKELF
+vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
 vendor/lib64/libcneqmiutils.so
@@ -2551,7 +2551,7 @@ vendor/lib64/libvpptestutils.so
 vendor/lib64/libwapi_cert.so
 vendor/lib64/libwebrtc_audio_preprocessing.so
 vendor/lib64/libwms.so
-vendor/lib64/libwqe.so;DISABLE_CHECKELF
+vendor/lib64/libwqe.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/libxditk_DIT_Manager.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib64/libxditk_ISP.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
