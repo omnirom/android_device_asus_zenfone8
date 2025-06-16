@@ -68,10 +68,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_1.xml
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService
-
 # Api
 PRODUCT_SHIPPING_API_LEVEL := 30
 
