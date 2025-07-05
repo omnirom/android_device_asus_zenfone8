@@ -2,7 +2,6 @@
 product/app/PowerOffAlarm/PowerOffAlarm.apk
 
 # ANT+
-system_ext/app/AntHalService-Soong/AntHalService-Soong.apk
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Audio
