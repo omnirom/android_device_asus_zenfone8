@@ -11,6 +11,14 @@ set_prop(vendor_init, vendor_camera_prop)
 get_prop(vendor_init, vendor_asus_camera_prop)
 set_prop(vendor_init, vendor_asus_camera_prop)
 
+# Asus Sp set props contexts
+get_prop(vendor_init, vendor_asus_prop)
+set_prop(vendor_init, vendor_asus_prop)
+get_prop(vendor_init, vendor_asus_sp_prop)
+set_prop(vendor_init, vendor_asus_sp_prop)
+get_prop(vendor_init, vendor_asus_sp_system_prop)
+set_prop(vendor_init, vendor_asus_sp_system_prop)
+
 allow vendor_init vendor_goodix_data_file:file create_file_perms;
 allow vendor_init vendor_goodix_data_file:dir create_dir_perms;
 allow vendor_init vendor_proc_camera:file rw_file_perms;

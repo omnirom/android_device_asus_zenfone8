@@ -1,10 +1,50 @@
 # Audio
 vendor.use.audio.eu.parameters    u:object_r:vendor_audio_prop:s0
 
+#ABSP++++ for SP
+ro.vendor.asus.product.mkt_name           u:object_r:vendor_asus_prop:s0
+ro.vendor.build.asus.fota                             u:object_r:vendor_asus_prop:s0
+ro.vendor.build.asus.version                       u:object_r:vendor_asus_prop:s0
+ro.vendor.build.asus.sku                               u:object_r:vendor_asus_prop:s0
+ro.vendor.build.asus.number                      u:object_r:vendor_asus_prop:s0
+ro.vendor.build.csc.version                          u:object_r:vendor_asus_prop:s0
+ro.vendor.build.fota.version                        u:object_r:vendor_asus_prop:s0
+ro.vendor.cpufreq                                           u:object_r:vendor_asus_prop:s0
+ro.vendor.facebook.partnerid                     u:object_r:vendor_asus_prop:s0
+ro.vendor.memsize                                         u:object_r:vendor_asus_prop:s0
+
+vendor.asus.build.ext.version                      u:object_r:vendor_asus_prop:s0
+vendor.asus.build.sub.version                     u:object_r:vendor_asus_prop:s0
+vendor.atd.oem-uart                                      u:object_r:vendor_asus_prop:s0
+vendor.atd.unlocked.ready                          u:object_r:vendor_asus_prop:s0
+vendor.atd.fusing.ready                                u:object_r:vendor_asus_prop:s0
+vendor.camera.sound.forced                      u:object_r:vendor_asus_prop:s0
+vendor.debug.update.deviceinfo.result  u:object_r:vendor_asus_prop:s0
+vendor.factory.adbon                                    u:object_r:vendor_asus_prop:s0
+
+ro.vendor.config.CID                                     u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.config.idcode                               u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.config.versatility                         u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.config.revenuecountry             u:object_r:vendor_asus_sp_system_prop:s0
+vendor.asus_sp.start                                     u:object_r:vendor_asus_sp_system_prop:s0
+vendor.asus.fota.resvered.size                  u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.tc.qkey                                           u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.asus.logupload                            u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.asus.beta                                       u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.confidentiality                             u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.product.carrier                            u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.udid                                                 u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.asus.poweroffalarm_support u:object_r:vendor_asus_sp_system_prop:s0
+
+vendor.x-rr.                                            u:object_r:vendor_asus_sp_prop:s0
+vendor.x-rr.vendor.isn                        u:object_r:vendor_asus_prop:s0
+vendor.x-rr.vendor.asus.serialno    u:object_r:vendor_asus_prop:s0
+ro.vendor.isn                                         u:object_r:vendor_asus_prop:s0
+persist.vendor.asus.serialno            u:object_r:vendor_asus_prop:s0
+
 # Camera
 ro.vendor.build.asus.           u:object_r:vendor_asus_build_prop:s0
 ro.vendor.camera.sound.forced   u:object_r:vendor_asus_camera_prop:s0
-ro.vendor.config.versatility    u:object_r:vendor_asus_camera_prop:s0
 vendor.asus.dis_flash_light     u:object_r:vendor_asus_camera_prop:s0
 vendor.camera.                  u:object_r:vendor_asus_camera_prop:s0
 vendor.camera.set.apk.          u:object_r:vendor_asus_camera_prop:s0

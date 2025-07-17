@@ -53,3 +53,6 @@ allow asus_camera_app system_lib_file:file lock;
 
 get_prop(asus_camera_app, vendor_asus_build_prop)
 get_prop(asus_camera_app, vendor_asus_camera_prop)
+
+get_prop(asus_camera_app, vendor_asus_prop)
+get_prop(asus_camera_app, vendor_asus_sp_system_prop)
