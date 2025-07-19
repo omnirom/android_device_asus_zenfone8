@@ -121,6 +121,9 @@ DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/manifest/framework_manifest.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest/manifest_lahaina.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/manifest/compatibility_matrix.xml
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_zenfone8
+
 # Kernel
 KERNEL_LD := LD=ld.lld AR=llvm-ar
 BOARD_BOOT_HEADER_VERSION := 3
