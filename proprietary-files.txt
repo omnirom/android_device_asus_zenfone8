@@ -24,6 +24,10 @@ system/lib64/libxditk_ditBSP.so
 system/lib64/libxditk_ditBSP_JNI.so
 system/priv-app/AsusCamera/AsusCamera.apk;OVERRIDES=Camera2
 
+# Display
+system/etc/permissions/asus.software.zenui.xml
+system/priv-app/AsusVisualMaster/AsusVisualMaster.apk
+
 # DPM
 system/framework/tcmclient.jar
 system_ext/bin/dpmd

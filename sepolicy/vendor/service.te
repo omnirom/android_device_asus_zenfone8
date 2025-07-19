@@ -1,0 +1,2 @@
+# Display (Pixelworks)
+type hal_display_iris_hidl_service, hal_service_type, service_manager_type;

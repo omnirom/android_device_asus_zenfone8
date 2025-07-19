@@ -2,3 +2,5 @@ type iris_config, domain;
 type iris_config_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(iris_config)
+
+allow iris_config hal_display_iris_hwservice:hwservice_manager find;
