@@ -8,3 +8,5 @@ allow platform_app vendor_asus_build_prop:file { getattr map open read };
 allow platform_app system_lib_file:file lock;
 
 get_prop(platform_app, vendor_asus_prop)
+get_prop(platform_app, vendor_asus_camera_prop)
+get_prop(platform_app, vendor_asus_sp_system_prop)
