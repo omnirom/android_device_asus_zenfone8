@@ -93,6 +93,6 @@
     "remote": "github",
     "repository": "LineageOS/android_vendor_qcom_opensource_healthd-ext",
     "target_path": "vendor/qcom/opensource/healthd-ext",
-    "revision": "lineage-22.2"
+    "revision": "lineage-23.0"
    }
 ]
