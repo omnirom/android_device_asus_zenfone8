@@ -116,6 +116,9 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
     android.hardware.boot-service.qti.recovery
 
+# Camera
+$(call soong_config_set_bool,camera,camera_needs_client_info,true)
+
 # Charger images
 PRODUCT_PACKAGES += \
     omni_charger_res_images \
