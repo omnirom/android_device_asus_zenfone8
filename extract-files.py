@@ -69,6 +69,12 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib/ese_spi_nxp_prebuilt.so',
      'vendor/lib64/ese_spi_nxp_prebuilt.so'): blob_fixup()
         .add_needed('libbase_shim.so'),
+    ('vendor/bin/poweropt-service',
+     'vendor/lib/libdpps.so',
+     'vendor/lib64/libdpps.so',
+     'vendor/lib/libsnapdragoncolor-manager.so',
+     'vendor/lib64/libsnapdragoncolor-manager.so'): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
