@@ -11,6 +11,13 @@
     "target_path": "device/qcom/sepolicy_vndr",
     "revision": "android-16"
   },
+  {
+    "remote": "omnirom",
+    "repository": "android_external_tinycompress",
+    "target_path": "external/tinycompress",
+    "override": "platform/external/tinycompress",
+    "revision": "android-16"
+   },
    {
      "remote": "gitlab",
      "repository": "android_hardware_omni_compat",
