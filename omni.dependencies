@@ -34,7 +34,7 @@
     "remote": "omnirom",
     "repository": "android_hardware_qcom_display",
     "target_path": "hardware/qcom-caf/sm8350/display",
-    "revision": "android-15-sm8350"
+    "revision": "android-16-sm8350"
   },
   {
     "remote": "github",
