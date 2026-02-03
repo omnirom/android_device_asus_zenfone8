@@ -117,6 +117,7 @@ system_ext/etc/permissions/izat.xt.srv.xml
 system_ext/etc/permissions/privapp-permissions-com.qualcomm.location.xml
 system_ext/framework/com.qti.location.sdk.jar
 system_ext/framework/izat.xt.srv.jar
+system_ext/lib64/liblocsdk_diag_jni.so
 system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk
 
 # HotwordEnrollment
