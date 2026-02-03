@@ -174,6 +174,10 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
 # Init
+PRODUCT_PACKAGES += \
+    fstab.default \
+    fstab.default.vendor_ramdisk
+
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_zenfone8)
 
 # Input
@@ -241,10 +245,6 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_PACKAGES += \
     tune2fs.vendor_ramdisk \
     resize2fs.vendor_ramdisk
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
-    $(LOCAL_PATH)/ramdisk/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.default
 
 # Sensors
 PRODUCT_COPY_FILES += \
