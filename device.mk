@@ -245,8 +245,8 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    tune2fs.vendor_ramdisk \
-    resize2fs.vendor_ramdisk
+    tune2fs_ramdisk \
+    resize2fs_ramdisk
 
 # Sensors
 PRODUCT_COPY_FILES += \
