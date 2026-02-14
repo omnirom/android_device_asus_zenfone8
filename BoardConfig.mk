@@ -121,7 +121,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest/manifest_lahaina.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/manifest/compatibility_matrix.xml
 
 # Kernel
-BOARD_BOOT_HEADER_VERSION := 4
+BOARD_BOOT_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_CMDLINE := \
     androidboot.console=ttyMSM0 \
