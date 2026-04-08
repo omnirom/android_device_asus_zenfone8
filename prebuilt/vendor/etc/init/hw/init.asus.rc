@@ -260,18 +260,6 @@ on property:persist.vendor.asus.fp.wakeup=true
 on property:persist.vendor.asus.fp.wakeup=false
    write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_mode 0
 
-on property:vendor.asus.touch_control_fod=0
-   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_ctrl_mode 0
-on property:vendor.asus.touch_control_fod=1
-   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_ctrl_mode 1
-on property:vendor.asus.touch_control_fod=2
-   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_ctrl_mode 2
-
-on property:vendor.asus.touch_control_aod=0
-   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_aod_ctrl_mode 0
-on property:vendor.asus.touch_control_aod=1
-   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_aod_ctrl_mode 1
-
 on property:vendor.goodix.sensor.status=*
    write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fp_auth_status ${vendor.goodix.sensor.status}
 

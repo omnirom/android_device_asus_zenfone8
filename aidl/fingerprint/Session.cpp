@@ -14,11 +14,6 @@
 
 #include "CancellationSignal.h"
 
-#define AOD_ENABLED "doze_always_on"
-#define AOD_PROPERTY "vendor.asus.touch_control_aod"
-#define AOD_PROPERTY_FALSE "0"
-#define AOD_PROPERTY_TRUE "1"
-
 #define CMD_FINGER_DOWN 200001
 #define CMD_FINGER_UP 200003
 #define CMD_LIGHT_AREA_CLOSE 200000
@@ -80,14 +75,7 @@ Session::Session(fingerprint_device_t* device, int userId,
 
     SetProperty(UDFPS_PROPERTY, UDFPS_PROPERTY_TRUE);
 
-    std::string valueAod = GetProperty(AOD_ENABLED, "");
-    if (valueAod == "0") {
-        SetProperty(AOD_PROPERTY, AOD_PROPERTY_FALSE);
-    } else {
-        SetProperty(AOD_PROPERTY, AOD_PROPERTY_TRUE);
-    }
-
-        std::thread([this]() {
+    std::thread([this]() {
         int fd = open(FOD_UI_PATH, O_RDONLY);
         if (fd < 0) {
             LOG(ERROR) << "failed to open fd, err: " << fd;

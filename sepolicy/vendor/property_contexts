@@ -65,8 +65,6 @@ ro.hardware.fp_shape                u:object_r:vendor_gx_fpd_prop:s0
 persist.vendor.asus.fp.wakeup       u:object_r:vendor_gx_fpd_prop:s0
 vendor.fp.cali.shipping.check       u:object_r:vendor_gx_fpd_prop:s0
 vendor.screen.rotation              u:object_r:vendor_gx_fpd_prop:s0
-vendor.asus.touch_control_          u:object_r:vendor_gx_fpd_prop:s0
-
 
 # GPS
 persist.vendor.asus.agps.    u:object_r:vendor_gps_prop:s0
