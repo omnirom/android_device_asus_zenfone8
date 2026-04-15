@@ -22,6 +22,9 @@ genfscon sysfs /class/drm/hdr_mode                                              
 # EVT
 genfscon proc /asusevtlog                                                                       u:object_r:vendor_proc_evt:s0
 
+# Fastcharge
+genfscon sysfs /class/asuslib/smartchg_slow_charging                                            u:object_r:vendor_sysfs_battery_supply:s0
+
 # Fingerprint
 genfscon proc /driver/fp_xy                                                                     u:object_r:vendor_proc_fingerprint:s0
 

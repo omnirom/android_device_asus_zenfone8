@@ -169,6 +169,10 @@ $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class
 $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
 
+$(call soong_config_set,lineage_health,fast_charge_node,/sys/class/asuslib/smartchg_slow_charging)
+$(call soong_config_set,lineage_health,fast_charge_value_none,1)
+$(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0
