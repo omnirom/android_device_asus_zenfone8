@@ -443,9 +443,6 @@ on property:persist.sys.stopcharging=1
 on property:persist.sys.stopcharging=0
     write /sys/class/asuslib/charging_suspend_en 0
 
-on property:persist.sys.charginglimit=*
-    write /sys/class/asuslib/smartchg_slow_charging ${persist.sys.charginglimit}
-
 on property:persist.sys.enableLPD=1
     write /sys/class/qcom-battery/moisture_detection_en 1
 on property:persist.sys.enableLPD=0
